@@ -5,6 +5,26 @@
             Brygada-7 Report
         </title>
     </head>
+    <style>       
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #f1f1f1;
+          min-width: 160px;
+          overflow: auto;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1;
+        }
+        
+        .dropdown-content a {
+          color: black;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+        }
+
+        .show {display: block;}
+    </style>
     <body>
         <table border=3px width="100%">
             <tr>
@@ -44,11 +64,32 @@
             </tr>
             <tr>
                 <td>
-                    <a href="contents/selectors.html" target="CONTENT">
-                        Селектори
-                    </a>
+                    <button onclick="myFunction()" class="dropbtn">Селектори</button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="contents/tagClass_sel.html" target="CONTENT">Селектори тегу і класу</a>
+                        <a href="contents/other_sel.html" target="CONTENT">Інші селектори</a>
+                        <a href="contents/group_sel.html" target="CONTENT">Групування селекторів</a>
+                      </div>
                 </td>
             </tr>
         </table>
+        <script>
+            function myFunction() {
+              document.getElementById("myDropdown").classList.toggle("show");
+            }
+            
+            window.onclick = function(event) {
+              if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                  var openDropdown = dropdowns[i];
+                  if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                  }
+                }
+              }
+            }
+            </script>
     </body>
 </html>
