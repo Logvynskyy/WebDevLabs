@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+            font-size: 50px;
+        }
+        table {
+            border: 5px solid;
+            border-collapse: collapse;
+            border-spacing: 0px;
+            margin: auto;
+            height: 700px;
+        }
+        td{
+            border: 5px solid;
+        }
+        .yellow{
+            background-color: yellow;
+            width: 100px;
+        }
+        .blue{
+            background-color: blue;
+            height: 110px;
+            
+        }
+        .white{
+            background-color: white;
+        }    
+    </style>
+</head>
+<body>
+    <div>
+        <table>
+            <tr>
+                <td class="yellow" rowspan="3">2</td>
+                <td class="white" rowspan="3" width=75px></td>
+                <td class="blue" width=300px>1</td>
+                <td class="white" rowspan="3" width=75px></td>
+            </tr>
+
+            <tr>
+                <td class="white" width=300px>4</td>
+            </tr>
+
+            <tr>
+                <td class="blue" width=300px>3</td>
+            </tr>      
+        </table>
+        
+        <br>
+
+        <table>
+            <tr>
+                <td class="yellow">2</td>
+                <td width=75px></td>
+                <td>
+                    <table width = 300px>
+                        <tr><td class="blue">1</td></tr>
+                        <tr><td class="white">4</td></tr>
+                        <tr><td class="blue">3</td></tr>
+                    </table>
+                </td>
+                <td width=75px></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
