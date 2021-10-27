@@ -2,104 +2,152 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
         <title>Car Shop</title>
         <style>
-            
+            *{
+                box-sizing: border-box;
+                font-weight: bold;
+                /* position: relative; */
+            }
+
+            .wrapper{
+                background: white;
+                height: 100vh;
+                margin: 0 10%;
+            }
+
+            .top, .bottom{
+                /* background-color: blue; */
+                height: 10%;
+                border: 2px solid black;
+                color: white;
+            }
+
+            .bottom{
+                clear: both;
+            }
+
+            .left, .right{
+                height: 80%;
+                width: 20%;
+                background-color: yellow;
+                border: 2px solid black;
+            }
+
+            .left{
+                float: left;
+            }
+
+            .right{
+                float: right;
+            }
+
+            .inside{
+                float: left;
+                width: 60%;
+                height: 80%; 
+            }
+
             body {
-             margin: 0;
-             font-family: Arial, Helvetica, sans-serif;
+                margin: 0;
+                font-family: Arial, Helvetica, sans-serif;
             }
 
             .topnav {
-            overflow: hidden;
-            background-color: #333;
+                overflow: hidden;
+                background-color: #333;
+                height: 90%;
             }
 
             .topnav a {
-            float: left;
-            color: #f2f2f2;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            font-size: 17px;
+                float: left;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 17px;
             }
 
             .topnav a:hover {
-            background-color: #ddd;
-            color: black;
+                background-color: #ddd;
+                color: black;
             }
 
             .topnav a.active {
-            background-color: #4CAF50;
-            color: white;
+                background-color: #4CAF50;
+                color: white;
             }
             table {
-            font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
-            text-align: left;
-            border-collapse: separate;
-            border-spacing: 5px;
-            background: #ECE9E0;
-            color: #656665;
-            border: 16px solid #ECE9E0;
-            border-radius: 20px;
-            margin: auto;
-            width: 50% ;
-
+                font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+                text-align: left;
+                border-collapse: separate;
+                border-spacing: 5px;
+                background: #ECE9E0;
+                color: #656665;
+                border: 16px solid #ECE9E0;
+                border-radius: 20px;
+                margin: auto;
+                width: 50% ;
             }
             th {
-            font-size: 18px;
-            padding: 10px;
+                font-size: 18px;
+                padding: 10px;
             }
             td {
-            background: #F5D7BF;
-            padding: 10px;
+                background: #F5D7BF;
+                padding: 10px;
             }
         </style>
     </head>
-    
     <body>
-        <div class="topnav">
-            <a class="active" href="">Главная</a>
-            <a href="site/registration.html">Регистрация</a>
-            <a href="site/images.html">Картинки</a>
-          </div>
-          <div>
-            <table >
-                <caption style="font-weight: bolder;color: darkmagenta;" >Car shop by(Sh1monchik,Gr1nis,Shovch1k,Maks1mka)</caption>
-                <tr>
-                    <th>Mercedes-Benz</th>
-                    <th>BMW</th>
-                    <th>Renault</th>
-                    <th>Jaguar</th>
-                </tr>
-                <tr>
-                    <td>C63 AMG</td>
-                    <td>BMW i8</td>
-                    <td>Sandero Stepway</td>
-                    <td>I‑PACE</td>
-                </tr>
-                <tr>
-                    <td>Седан w206</td>
-                    <td><a href=site/bmwM5.html>BMW M5</a></td>
-                    <td>Megane Sedan</td>
-                    <td>E‑PACE</td>
-                </tr>
-                <tr>
-                    <td>GLS MAYBACH</td>
-                    <td>BMW 2 Active Tourer</td>
-                    <td>KADJAR</td>
-                    <td>JAGUAR XF</td>
-                </tr>
-                <tr>
-                    <td>SLS AMG</td>
-                    <td>BMW E3</td>
-                    <td>SANDERO</td>
-                    <td>JAGUAR F‑TYPE</td>
-                </tr>
-            </table>
+        <div class = "wrapper">
+            <div class="top">
+                <div class="topnav">
+                    <a class="active" href="">Главная</a>
+                    <a href="site/registration.html">Регистрация</a>
+                    <a href="site/images.html">Картинки</a>
+                  </div>
+            </div>
+            <div class="left"><span class="text-center">2</span></div>
+            <div class="inside">
+                <div>
+                    <table >
+                        <caption style="font-weight: bolder;color: darkmagenta;" >Car shop by(Sh1monchik,Gr1nis,Shovch1k,Maks1mka)</caption>
+                        <tr>
+                            <th>Mercedes-Benz</th>
+                            <th>BMW</th>
+                            <th>Renault</th>
+                            <th>Jaguar</th>
+                        </tr>
+                        <tr>
+                            <td>C63 AMG</td>
+                            <td>BMW i8</td>
+                            <td>Sandero Stepway</td>
+                            <td>I‑PACE</td>
+                        </tr>
+                        <tr>
+                            <td>Седан w206</td>
+                            <td><a href=site/bmwM5.html>BMW M5</a></td>
+                            <td>Megane Sedan</td>
+                            <td>E‑PACE</td>
+                        </tr>
+                        <tr>
+                            <td>GLS MAYBACH</td>
+                            <td>BMW 2 Active Tourer</td>
+                            <td>KADJAR</td>
+                            <td>JAGUAR XF</td>
+                        </tr>
+                        <tr>
+                            <td>SLS AMG</td>
+                            <td>BMW E3</td>
+                            <td>SANDERO</td>
+                            <td>JAGUAR F‑TYPE</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="right"><span class="text-center">5</span></div>
+            <div class="bottom"><span class="text-right">3</span></div>
         </div>
-        
     </body>
 </html>
