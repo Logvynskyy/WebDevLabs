@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        margin: 0;
+    }
+
+    *{
+        box-sizing: border-box;
+        font-weight: bold;
+        position: relative;
+    }
+
+    span{
+        position: absolute;
+    }
+
+    .wrapper{
+        background: white;
+        height: 100vh;
+        margin: 0 10%;
+    }
+
+    .top, .bottom{
+        background-color: blue;
+        height: 10%;
+        border: 2px solid black;
+        color: white;
+    }
+
+    .bottom{
+        clear: both;
+    }
+
+    .left{
+        height: 80%;
+        width: 20%;
+        background-color: yellow;
+        border: 2px solid black;
+    }
+
+    .left{
+        float: left;
+    }
+
+    .inside_top{
+        margin-left: 20%;
+        float: top;
+        height: 10%;
+        width: 80%;
+        background-color: yellow;
+        border: 2px solid black;
+    }
+
+    .inside{
+        float: left;
+        width: 80%;
+        height: 80%; 
+        border: 2px solid black;
+    }
+
+    .text-inside{
+        top: 50%;
+        left: 20%;
+    }
+
+    .text-center{
+        top: 50%;
+        left: 50%;
+    }
+
+    .text-right{
+        top: 70%;
+        left: 10%;
+    }
+</style>
+<body>
+    <div class = "wrapper">
+        <div class="top"><span class="text-right">1</span></div>
+        <div class="left"><span class="text-center">2</span></div>
+        <div class="inside"><span class="text-center">4</span></div>
+        <div class="inside_top"><span class="text-inside">5</span></div>
+        <div class="bottom"><span class="text-right">3</span></div>
+    </div>
+</body>
+</html>
