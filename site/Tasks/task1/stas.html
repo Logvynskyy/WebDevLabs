@@ -15,15 +15,12 @@
                 arr[i] = rand;
             }
             console.log(arr);
-            console.log(sort(arr));
-            // console.log(minNumber(arr));
+            sortedArray = sort(arr);
+            console.log(sortedArray);
+            numbers(sortedArray);
         }
 
         function sort(arr) {
-            // let count = 0;
-            // for(let i = 0; i < arr.length; i++){
-            //     if(arr[i] < 0) count++;
-            // }
             let sortedArr = arr;
             for (let i = 0, l = arr.length, k = l - 1; i < k; i++) {
                 let indexMin = i;
@@ -39,13 +36,21 @@
             return sortedArr;
         }
 
-        function minNumber(arr) {
-            let count = 0;
+        function numbers(arr) {
             for(let i = 0; i < arr.length; i++){
-                if(arr[i] > 0) count++;
+                if(arr[i] > 0) continue;
+                else{
+                    console.log("Найменший з додатних елементів - " + arr[i - 1]);
+                    break;
+                }
             }
-            let negative = new Array(count);
-
+            for(let i = arr.length - 1; i >= 0; i--){
+                if(arr[i] < 0) continue;
+                else{
+                    console.log("Найбільший з від'ємних елементів - " + arr[i + 1]);
+                    break;
+                }
+            }
         }
     </script>
 </body>
