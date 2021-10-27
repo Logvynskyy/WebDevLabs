@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        font-weight: bold;
+        box-sizing: border-box;
+        border-collapse: collapse;
+    }
+
+    body{
+        margin: 0;
+    }
+
+    table{
+        height: 100vh;
+        width: 100%;
+        border: 2px white;
+    }
+
+    .edge{
+        width: 10%;
+        background-color: white;
+    }
+
+    .blue{
+        background-color: blue;
+        height: 10%;
+        color: white;
+        border: 2px solid black;
+        padding: 30px 0 0 100px;
+    }
+
+    .yellow_left{
+        background-color: yellow;
+        height: 80%;
+        width: 15%;
+        color: black;
+        border: 2px solid black;
+        text-align: center;
+    }
+    .yellow_top{
+        background-color: yellow;
+        color: black;
+        height: 10%;
+        border: 2px solid black;
+        padding-left: 10%;
+        text-align: left;
+    }
+    .white{
+        border: 2px solid black;
+    }
+</style>
+<body>
+    <table>
+        <tr>
+            <td class="edge" rowspan="4"></td>
+            <td class="blue" colspan="3">1</td>
+            <td class="edge" rowspan="4"></td>
+        </tr>
+        <tr>
+            <td class="yellow_left" rowspan="2">2</td>
+            <td class="yellow_top" colspan="2">5</td>
+        </tr>
+        <tr style="text-align: center;">
+            <td class="white">4</td>
+        </tr>
+        <tr>
+            <td class="blue" colspan="3">3</td>
+        </tr>
+    </table>
+</body>
+</html>
