@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Гістограма</title>
+</head>
+<style>
+    .graph {
+        width: 500px;
+        height: 500px;
+        border: 1px solid #aeaeae;
+        background-color: #eaeaea;
+}
+    .bar {
+        width: 8px;
+        margin: 1px;
+        display: inline-block;
+        position: relative;
+        background-color: #aeaeae;
+        vertical-align: baseline;
+    }
+</style>
+<body>
+    <input type="text" class = "number">
+    <button onclick="addField()">Додати ще одне поле</button>
+    <div id="input0"></div>
+    <br><button onclick="main()">Згенерувати гістограму</button>
+    <!-- <div class="graph">
+        <div style="height: 22px;" class="bar"></div>
+        <div style="height: 11px;" class="bar"></div>
+        <div style="height: 6px;" class="bar"></div>
+        <div style="height: 49px;" class="bar"></div>
+        <div style="height: 28px;" class="bar"></div>
+    </div> -->
+    <script>
+        var x = 0;
+        function addField(){
+            let str = '<input type="text" class="number"><div id="input' + (x + 1) + '"></div>';
+            document.getElementById('input' + x).innerHTML = str;
+            x++;
+        }
+    </script>
+
+</body>
+</html>
