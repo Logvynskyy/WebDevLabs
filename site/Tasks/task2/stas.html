@@ -5,14 +5,14 @@
     <title>Гістограма</title>
 </head>
 <style>
-    .graph {
-        width: 500px;
-        height: 500px;
+    #graph {
+        width: 100%;
+        height: 90vh;
         border: 1px solid #aeaeae;
-        background-color: #eaeaea;
+        visibility: hidden;
 }
     .bar {
-        width: 8px;
+        width: 70px;
         margin: 1px;
         display: inline-block;
         position: relative;
@@ -24,14 +24,9 @@
     <input type="text" class = "number">
     <button onclick="addField()">Додати ще одне поле</button>
     <div id="input0"></div>
-    <br><button onclick="main()">Згенерувати гістограму</button>
-    <!-- <div class="graph">
-        <div style="height: 22px;" class="bar"></div>
-        <div style="height: 11px;" class="bar"></div>
-        <div style="height: 6px;" class="bar"></div>
-        <div style="height: 49px;" class="bar"></div>
-        <div style="height: 28px;" class="bar"></div>
-    </div> -->
+    <br><button onclick="createGraph()">Згенерувати гістограму</button><br>
+    <div id="graph"></div>
+
     <script>
         var x = 0;
         function addField(){
@@ -39,7 +34,32 @@
             document.getElementById('input' + x).innerHTML = str;
             x++;
         }
-    </script>
 
+        function createGraph(){
+            var div = document.getElementById('graph');
+            div.style.visibility = 'visible';
+
+            let values = getValues();
+            for(let i = 0; i < values.length; i++){
+                let bar = document.createElement("div");
+                bar.className = "bar";
+                bar.style.height = `${values[i]}px`;
+                div.appendChild(bar);
+            }
+        }
+
+        function getValues(){
+            var vals = document.getElementsByClassName('number');
+            var values = new Array(vals.length);
+            for(let i = 0; i < values.length; i++){
+                values[i] = vals[i].value;
+            }
+            values.sort(function(a, b) {
+                return b - a;
+            });
+            console.log(values);
+            return values;
+        }
+    </script>
 </body>
 </html>
