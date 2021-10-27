@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="main()">Test</button>
+    <script>
+        function main() {
+            let arr = [];
+            arr.length = 10;
+            for(let i = 0; i < arr.length; i++){
+                let rand = Math.floor(-10 + Math.random() * 20);
+                arr[i] = rand;
+            }
+            console.log(arr);
+            console.log(sort(arr));
+            // console.log(minNumber(arr));
+        }
+
+        function sort(arr) {
+            // let count = 0;
+            // for(let i = 0; i < arr.length; i++){
+            //     if(arr[i] < 0) count++;
+            // }
+            let sortedArr = arr;
+            for (let i = 0, l = arr.length, k = l - 1; i < k; i++) {
+                let indexMin = i;
+                for (let j = i + 1; j < l; j++) {
+                    if (sortedArr[indexMin] < sortedArr[j]) {
+                        indexMin = j;
+                    }
+                }
+                if (indexMin !== i) {
+                    [sortedArr[i], sortedArr[indexMin]] = [sortedArr[indexMin], sortedArr[i]];
+                }
+            }
+            return sortedArr;
+        }
+
+        function minNumber(arr) {
+            let count = 0;
+            for(let i = 0; i < arr.length; i++){
+                if(arr[i] > 0) count++;
+            }
+            let negative = new Array(count);
+
+        }
+    </script>
+</body>
+</html>
