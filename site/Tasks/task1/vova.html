@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 9</title>
+</head>
+<body>
+    <button onclick="main()">Виконати завдання</button>
+    <script>
+        function main(){
+            var arr = [];
+            for (var i=0, t=20; i<t; i++) {
+                arr.push(Math.round(Math.random() * t))
+            }
+            console.log("Згенерований масив: ");
+            console.log(arr);
+
+            var multiplicity2 = mult2(arr);
+            var multiplicity3 = mult3(arr);
+
+            var same23 = same(multiplicity2, multiplicity3);
+
+            var result = multiplicity2.concat(same23);
+            result = result.concat(multiplicity3);
+
+            console.log("Числа кратні 2:");
+            console.log(multiplicity2);
+
+            console.log("Числа кратні 3:");
+            console.log(multiplicity3);
+
+            console.log("Числа кратні 2 і 3:");
+            console.log(same23);
+
+            console.log("Об'єднані масиви:");
+            console.log(result);
+
+            var res = quickSort(result, 0, result.length - 1);
+            console.log("Відсортований масив:");
+            console.log(res);
+        }
+
+        function mult2(array){
+            var multiplicity2 = []
+
+            array.forEach(element => {
+                if(!(element%2)) multiplicity2.push(element)
+            });
+
+            return multiplicity2;
+        }
+
+        function mult3(array){
+
+            var multiplicity3 = []
+            
+
+            array.forEach(element => {
+                if(!(element%3)) multiplicity3.push(element)
+            });
+
+            return multiplicity3;
+        }
+
+        function same(arr2, arr3){
+            var same = []
+
+            for(let i = 0; i < arr2.length; i++){
+                for(let j = 0; j < arr3.length; j++){
+                    if(arr2[i] == arr3[j]){
+                        same.push(arr3[j]);
+                        arr3.slice(j, 1);
+                        break;
+                    }
+                }
+            }
+            return same;
+        }
+
+        function partition(items, left, right) {
+            var pivot   = items[Math.floor((right + left) / 2)], //middle element
+                i       = left, //left pointer
+                j       = right; //right pointer
+            while (i <= j) {
+                while (items[i] < pivot) {
+                    i++;
+                }
+                while (items[j] > pivot) {
+                    j--;
+                }
+                if (i <= j) {
+                    swap(items, i, j); //swap two elements
+                    i++;
+                    j--;
+                }
+            }
+            return i;
+        }
+
+        function quickSort(items, left, right) {
+            var index;
+            if (items.length > 1) {
+                index = partition(items, left, right); //index returned from partition
+                if (left < index - 1) { //more elements on the left side of the pivot
+                    quickSort(items, left, index - 1);
+                }
+                if (index < right) { //more elements on the right side of the pivot
+                    quickSort(items, index, right);
+                }
+            }
+            return items;
+        }
+
+        function swap(items, leftIndex, rightIndex){
+            var temp = items[leftIndex];
+            items[leftIndex] = items[rightIndex];
+            items[rightIndex] = temp;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Підказка при уведенні</title>
+</head>
+<style>
+
+</style>
+<body>
+    <div class="wrapper">
+        <div class="input__text">
+          <h1 class="text__title">Введіть ваше ім'я</h1>
+          <input type="text" class="input__text" placeholder="Your name" list="namesList">
+          <button class="submit__button">Send</button>
+          <datalist id="namesList">
+            <option class = "namesList-opt" value="Vova">
+            <option class = "namesList-opt" value="Maxim">
+            <option class = "namesList-opt" value="Denis">
+            <option class = "namesList-opt" value="Stas">
+        </datalist>
+        </div>
+        <div class="add__option">
+            <h1 class="text__title">Введіть нове ім'я</h1>
+            <input type="text" class="option__text" placeholder="New name">
+            <!-- обробник події (handler) -->
+            <button class="add__option-btn" onclick="func()">Add name</button>
+        </div>
+    </div>
+
+    <script>
+        function func(){
+            var allOptions = document.getElementsByClassName("namesList-opt");
+            var newName = document.getElementsByClassName("option__text")[0].value;
+
+            var a = true; 
+            for(let i = 0; i < allOptions.length; i++){
+                if(allOptions[i].value == newName){alert("Name already exists."); a = false}
+            }
+            if(a){
+                var list = document.getElementById('namesList');
+                var option = document.createElement('option');
+                option.value = newName;
+                option.className = "namesList-opt";
+                list.appendChild(option);
+            }
+        }
+    </script>
+</body>
+</html>
