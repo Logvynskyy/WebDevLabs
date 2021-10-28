@@ -1,22 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>other</title>
     <style>
-        body {
-             margin: 0;
-             font-family: Arial, Helvetica, sans-serif;
-            }
-
-        #image{
-                width: 24%;
-                height: 200px;
-                margin: 0px;
-            }
-        .topnav {
+        #slides {
+    position: relative;
+    height: 40vh;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+}
+.slide {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 60vh;
+    width: 60%;
+    opacity: 0;
+    z-index: 1;
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    transition: opacity 1s;
+}
+.showing {
+    opacity: 1;
+    z-index: 2;
+    height: 60vh;
+    width: 60%;
+}
+.slide {
+    font-size: 40px;
+    padding: 40px;
+    box-sizing: border-box;
+    color: #fff;
+}
+.image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;	
+}
+.topnav {
             overflow: hidden;
             background-color: #333;
         }
@@ -41,15 +68,28 @@
         }
     </style>
 </head>
-<body>
+
+<body style="width: 100%;height: 100vh;margin: 0;">
     <div class="topnav">
         <a href="../index.html">Главная</a>
         <a href="registration.html">Регистрация</a>
         <a class="active">Картинки</a>
       </div>
-    <img src="../img/mers1.jpg" alt="mers_image " id="image">
-    <img src="../img/mers2.jpg" alt="mers_image " id="image">
-    <img src="../img/bmv1.jpg" alt="bmw_image " id="image">
-    <img src="../img/bmv2.jpg" alt="bmv_image " id="image">
+    <ul id="slides">
+        <li class="slide showing"><img src="../img/bmv1.jpg" class="image" width="40"></li>
+        <li class="slide"><img src="../img/bmv2.jpg" class="image"></li>
+        <li class="slide"><img src="../img/mers1.jpg" class="image"></li>
+        <li class="slide"><img src="../img/mers2.jpg" class="image"></li>
+        <li class="slide"><img src="../img/bmwm5.jpg" class="image"></li>
+    </ul>
 </body>
+<script>var slides = document.querySelectorAll('#slides .slide');
+    var currentSlide = 0;
+    var slideInterval = setInterval(nextSlide,4000);
+    
+    function nextSlide() {
+        slides[currentSlide].className = 'slide';
+        currentSlide = (currentSlide+1)%slides.length;
+        slides[currentSlide].className = 'slide showing';
+    }</script>
 </html>
