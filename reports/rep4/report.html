@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>       
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      min-width: 160px;
+      overflow: auto;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+    
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .show {display: block;}
+</style>
+<body>
+    <table>
+        <tr>
+            <td>
+                <a href="contents/main.html" target="CONTENT">
+                    Постановка задачі Лабораторної роботи №4
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button onclick="myFunction()" class="dropbtn">Селектори</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="contents/URLscheme.html" target="CONTENT">Схема URL</a>
+                    <a href="contents/eventHandler.html" target="CONTENT">Обробник подій</a>
+                    <a href="contents/entity.html" target="CONTENT">Підстановка (entity)</a>
+                    <a href="contents/scriptTag.html" target="CONTENT"> Вставка (тег SCRIPT)</a>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="contents/arrays.html" target="CONTENT">
+                    Масиви (4 пункт)
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="contents/punkt6.html" target="CONTENT">
+                    Виконання 6 пункту
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="contents/vysnovky.html" target="CONTENT">
+                    Висновки
+                </a>
+            </td>
+        </tr>
+    </table>
+    <script>
+        function myFunction() {
+          document.getElementById("myDropdown").classList.toggle("show");
+        }
+        
+        window.onclick = function(event) {
+          if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+              }
+            }
+          }
+        }
+        </script>
+</body>
+</html>
