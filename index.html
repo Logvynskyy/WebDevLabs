@@ -7,6 +7,7 @@
             *{
                 box-sizing: border-box;
                 font-weight: bold;
+                position: relative;
             }
 
             .wrapper{
@@ -44,6 +45,10 @@
                 float: left;
                 width: 60%;
                 height: 80%; 
+            }
+
+            .slideshow{
+                height: 30%;
             }
 
             body {
@@ -160,6 +165,10 @@
             height: 100%;
             object-fit: cover;	
         }
+
+        ul{
+            position: absolute;
+        }
         </style>
     </head>
     <body>
@@ -177,8 +186,8 @@
             <img src="img/ad.jpg" style="width: 100%; margin: 20px 0;">
             <img src="img/ad.jpg" style="width: 100%; margin: 20px 0;">
           </div>
-
-          <div style="height: 90%;margin: 0px;width: 60%;display: flex;justify-content: center;">
+          
+          <div style="margin: 0px;width: 60%;display: flex;justify-content: center;">
             
             <table>
                 <caption style="font-weight: bolder;color: darkmagenta;" >Car shop by(Sh1monchik,Gr1nis,Shovch1k,Maks1mka)</caption>
@@ -213,15 +222,7 @@
                     <td>JAGUAR F‑TYPE</td>
                 </tr>
             </table>
-            <div style="clear: both">
-                <ul id="slides">
-                    <li class="slide showing"><img src="/img/bmv1.jpg" class="image" width="40"></li>
-                    <li class="slide"><img src="/img/bmv2.jpg" class="image"></li>
-                    <li class="slide"><img src="/img/mers1.jpg" class="image"></li>
-                    <li class="slide"><img src="/img/mers2.jpg" class="image"></li>
-                    <li class="slide"><img src="/img/bmwm5.jpg" class="image"></li>
-                </ul>
-            </div>
+            
         </div>
         <div class="bottom">
             <span class = "text-center">Made by Gr1nis, Sh1monchik, <a class="laydak" href="JavaScript:alert('Maks1mka laydak');">Maks1mka</a> and Shovch1k</span>

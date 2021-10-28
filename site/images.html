@@ -2,11 +2,6 @@
 <html>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<link rel="stylesheet" href="other.css">
-
-
-
 <head>
     <title>other</title>
     <style>
@@ -22,8 +17,8 @@
     position: absolute;
     left: 0px;
     top: 0px;
-    height: 35vh;
-    width: 35%;
+    height: 60vh;
+    width: 60%;
     opacity: 0;
     z-index: 1;
     -webkit-transition: opacity 1s;
@@ -34,8 +29,8 @@
 .showing {
     opacity: 1;
     z-index: 2;
-    height: 35vh;
-    width: 35%;
+    height: 60vh;
+    width: 60%;
 }
 .slide {
     font-size: 40px;
@@ -81,11 +76,12 @@
         <a class="active">Картинки</a>
       </div>
     <ul id="slides">
-        <li class="slide showing"><img src="/img/bmv1.jpg" class="image" width="40"></li>
-        <li class="slide"><img src="/img/bmv2.jpg" class="image"></li>
-        <li class="slide"><img src="/img/mers1.jpg" class="image"></li>
-        <li class="slide"><img src="/img/mers2.jpg" class="image"></li>
-        <li class="slide"><img src="/img/bmwm5.jpg" class="image">
+        <li class="slide showing"><img src="../img/bmv1.jpg" class="image" width="40"></li>
+        <li class="slide"><img src="../img/bmv2.jpg" class="image"></li>
+        <li class="slide"><img src="../img/mers1.jpg" class="image"></li>
+        <li class="slide"><img src="../img/mers2.jpg" class="image"></li>
+        <li class="slide"><img src="../img/bmwm5.jpg" class="image"></li>
+    </ul>
 </body>
 <script>var slides = document.querySelectorAll('#slides .slide');
     var currentSlide = 0;
