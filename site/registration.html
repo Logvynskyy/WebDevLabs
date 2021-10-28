@@ -42,12 +42,44 @@
         <a class="active">Регистрация</a>
         <a href="images.html">Картинки</a>
       </div>
-    <form action="../report.html" target="_blank">
-        <label for="fname">Ім'я:</label><br>
-        <input type="text" name="fname" value="Денис"><br>
-        <label for="lname">Прізвище:</label><br>
-        <input type="text" name="lname" value="Гриненко"><br><br>
-        <input type="submit" value="Перейти до звіту">
-    </form>
+      <div class="wrapper">
+        <div class="input__text">
+          <h1 class="text__title">Введіть ваше ім'я</h1>
+          <input type="text" class="input__text" placeholder="Your name" list="namesList">
+          <a href="../report.html" target="_blank">
+            <button class="submit__button">Перейти до звіту</button>
+        </a> 
+          <datalist id="namesList">
+            <option class = "namesList-opt" value="Vova">
+            <option class = "namesList-opt" value="Maxim">
+            <option class = "namesList-opt" value="Denis">
+            <option class = "namesList-opt" value="Stas">
+        </datalist>
+        </div>
+        <div class="add__option">
+            <h1 class="text__title">Введіть нове ім'я</h1>
+            <input type="text" class="option__text" placeholder="New name">
+            <button class="add__option-btn" onclick="func()">Add name</button>
+        </div>
+    </div>
+
+    <script>
+        function func(){
+            var allOptions = document.getElementsByClassName("namesList-opt");
+            var newName = document.getElementsByClassName("option__text")[0].value;
+
+            var a = true; 
+            for(let i = 0; i < allOptions.length; i++){
+                if(allOptions[i].value == newName){alert("Name already exists."); a = false}
+            }
+            if(a){
+                var list = document.getElementById('namesList');
+                var option = document.createElement('option');
+                option.value = newName;
+                option.className = "namesList-opt";
+                list.appendChild(option);
+            }
+        }
+    </script>
 </body>
 </html>
