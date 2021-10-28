@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>let arr_ids = []; let arr_alarms = [];</script>
+    <script >
+        function get_Time() {
+         var date = new Date();
+         var hours = date.getHours();
+         var minutes = date.getMinutes();
+         var seconds = date.getSeconds();
+           if (hours < 10) hours = "0" + hours;
+           if (minutes < 10) minutes = "0" + minutes;
+           if (seconds < 10) seconds = "0" + seconds;
+             document.getElementById("id_clock").innerHTML = "Current time: " + hours + ":" + minutes + ":" + seconds;
+             setTimeout("get_Time()", 1000);
+            for(let i = 0; i < arr_alarms.length; i++)
+            {
+            if (arr_alarms[i][0] == hours && arr_alarms[i][1] == minutes && document.getElementById(arr_ids[i]).checked){
+                alert("Annoying sound of your alarm!!!");
+                document.getElementById(arr_ids[i]).checked = false;
+            }
+            }
+        }
+
+       </script>
+</head>
+<body>
+    <h3 id="id_clock"></h3>
+    <script>get_Time(); let counter = 1;</script>
+    <table>
+        <tr>
+            <th>Hour</th>
+            <th>Minute</th>
+        </tr>
+        <tr>
+            <th><input id="hour"></th>
+            <th><input id="minute"></th>
+        </tr>
+        <tr>
+            <th colspan="2" align="center"><button type="button" onclick="add_Alarm()">Add alarm</button></th>
+        </tr>
+    </table>
+    
+    
+    <br>
+    <br>
+        <table id="table" border="1" width = "33%">
+            <tr>
+                <td>Time</td>
+                <td>On/Off</td> 
+            </tr>
+        </table>
+    <script>
+        function add_Alarm(){
+            let tr = document.createElement('tr');
+            let td = document.createElement('td');
+            let temp_arr = [];
+            temp_arr.push(document.getElementById("hour").value);
+            temp_arr.push(document.getElementById("minute").value);
+            arr_alarms.push(temp_arr);
+            td.innerHTML = document.getElementById("hour").value + ":" + document.getElementById("minute").value;
+            tr.appendChild(td);
+            td = document.createElement('td');
+            td.innerHTML = "<input type=\"checkbox\" id=alarm" + counter + ">";
+            arr_ids.push("alarm" + counter)
+            tr.appendChild(td);
+            table.appendChild(tr);
+            counter++;
+            }
+    </script>
+
+</body>
+</html>

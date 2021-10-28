@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<p>Input lenth of first array</p>
+<input id="arr1_len">
+<p>Input lenth of second array</p>
+<input id="arr2_len">
+<br>
+<br>
+<button type="button" onclick="getArray()">Submit</button>
+<p id="demo1"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<p id="demo4"></p>
+<p id="demo5"></p>
+
+
+<script>
+function getArray() {
+    var text1, text2, length1, length2;
+    var arr1 = []
+    var arr2 = []
+
+    length1 = document.getElementById("arr1_len").value;
+    length2 = document.getElementById("arr2_len").value;
+
+    for (i = 0; i < length1; i++)
+    {
+        arr1.push(Math.floor(Math.random() * 10))
+    }
+    for (i = 0; i < length2; i++)
+    {
+        arr2.push(Math.floor(Math.random() * 10))
+    }
+    var com_array = []; // element of first array which are comon with second
+    for(i = 0; i < arr1.length; i++)
+    {
+        if(contains(arr1[i], arr2) == true && contains(arr1[i], com_array) == false)
+        {
+            com_array.push(arr1[i]);
+        }
+    }
+    text1 = arr1;
+    text2 = arr2;
+    document.getElementById("demo1").innerHTML = "First array: " + text1;
+    document.getElementById("demo2").innerHTML = "Second array: " + text2;
+    document.getElementById("demo3").innerHTML = "Minimal comon value: " + getMin(com_array);
+    document.getElementById("demo4").innerHTML = "First sorted array: " + bubble_Sort(arr1);
+    document.getElementById("demo5").innerHTML = "Second sorted array: " + bubble_Sort(arr2);
+
+}
+function contains(obj, arr) {
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i] == obj) {
+            return true;
+        }
+    }
+    return false;
+}
+function getMin(arr){
+    var min = Infinity
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] < min){
+            min = arr[i];
+        }
+    }
+    return min;
+}
+
+function bubble_Sort(arr){
+    let temp;
+    for(let i = 0; i < arr.length-1; i++){
+        for (let k = 0; k < arr.length - i - 1; k++)
+        {
+            if(arr[k] > arr[k+1])
+            {
+                temp = arr[k+1];
+                arr[k+1] = arr[k];
+                arr[k] = temp
+            }
+        }
+    }
+    return arr;
+}
+</script>
+</body>
+</html>
