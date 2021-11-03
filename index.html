@@ -3,173 +3,18 @@
     <head>
         <meta charset="UTF-8">
         <title>Car Shop</title>
-        <style>
-            *{
-                box-sizing: border-box;
-                font-weight: bold;
-                position: relative;
-            }
-
-            .wrapper{
-                background: white;
-                height: 100vh;
-                margin: 0 10%;
-            }
-
-            .top, .bottom{
-               
-                height: 10%;
-                border: 2px solid black;
-                color: white;
-            }
-
-            .bottom{
-                clear: both;
-            }
-
-            .left, .right{
-                height: 80%;
-                width: 20%;
-                background-color: yellow;
-            }
-
-            .left{
-                float: left;
-            }
-
-            .right{
-                float: right;
-            }
-
-            .inside{
-                float: left;
-                width: 60%;
-                height: 80%; 
-            }
-
-            .slideshow{
-                height: 30%;
-            }
-
-            body {
-             margin: 0;
-             font-family: Arial, Helvetica, sans-serif;
-            
-             height: 100vh;
-            }
-
-            .topnav {
-            overflow: hidden;
-            background-color: #333;
-            height: 5%;
-            }
-            .bottom{
-                clear: both;
-                height: 5%;
-                background-color: rgb(88, 88, 231);
-                margin: 0;
-            }
-            .topnav a {
-            float: left;
-            color: #f2f2f2;
-            text-align: center;
-            text-decoration: none;
-            padding-left: 16px;
-            padding-right:16px;
-            font-size: 17px;
-            display: flex;
-            height: 100%;
-            align-items: center;
-            }
-            .topnav a:hover {
-                background-color: #ddd;
-                color: black;
-            }
-
-            .topnav a.active {
-                background-color: #4CAF50;
-            color: white;
-            }
-            table {
-            font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
-            text-align: left;
-            border-collapse: separate;
-            border-spacing: 5px;
-            background: #ECE9E0;
-            color: #656665;
-            border: 16px solid #ECE9E0;
-            border-radius: 20px;
-            margin: auto;
-            width: 60% ;
-            height: 20vh;
-            margin: 0;
-            }
-            th {
-                font-size: 18px;
-                padding: 10px;
-            }
-            td {
-                background: #F5D7BF;
-                padding: 10px;
-            }
-            .left{
-                float: left;
-            }
-            .right{
-                float: right;
-            }
-            .left, .right{
-                height: 90vh;
-                width: 15%;
-                background-color: #D7D4D4;
-            }
-            .laydak{
-                color: white;
-                text-decoration: none;
-            }
-                    #slides {
-            position: relative;
-            height: 40vh;
-            width: 100%;
-            padding: 0px;
-            margin: 0px;
-            list-style-type: none;
-        }
-        .slide {
-            position: absolute;
-            left: 0px;
-            top: 0px;
-            height: 35vh;
-            width: 35%;
-            opacity: 0;
-            z-index: 1;
-            -webkit-transition: opacity 1s;
-            -moz-transition: opacity 1s;
-            -o-transition: opacity 1s;
-            transition: opacity 1s;
-        }
-        .showing {
-            opacity: 1;
-            z-index: 2;
-            height: 35vh;
-            width: 35%;
-        }
-        .slide {
-            font-size: 40px;
-            padding: 40px;
-            box-sizing: border-box;
-            color: #fff;
-        }
-        .image{
-            width: 100%;
-            height: 100%;
-            object-fit: cover;	
-        }
-
-        ul{
-            position: absolute;
-        }
-        </style>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+        <script>
+            $( function() {
+              $( "#menu" ).menu();
+            } );
+            </script>
+            <style>
+            .ui-menu { width: 50%; }
+            </style>
     </head>
     <body>
         <div class="topnav">
@@ -178,9 +23,40 @@
             <a href="site/images.html">Картинки</a>
           </div>
           <div class="left"><img src="/img/ad.jpg" style="width: 100%; margin: 20px 0;">
-            <img src="/img/ad.jpg" style="width: 100%; margin: 20px 0;">
-            <img src="/img/ad.jpg" style="width: 100%; margin: 20px 0;">
-            </div>
+           
+            <ul id="menu">
+                <li class="ui-state-disabled"><div>Toys (n/a)</div></li>
+                <li><div>Books</div></li>
+                <li><div>Clothing</div></li>
+                <li><div>Electronics</div>
+                  <ul>
+                    <li class="ui-state-disabled"><div>Home Entertainment</div></li>
+                    <li><div>Car Hifi</div></li>
+                    <li><div>Utilities</div></li>
+                  </ul>
+                </li>
+                <li><div>Movies</div></li>
+                <li><div>Music</div>
+                  <ul>
+                    <li><div>Rock</div>
+                      <ul>
+                        <li><div>Alternative</div></li>
+                        <li><div>Classic</div></li>
+                      </ul>
+                    </li>
+                    <li><div>Jazz</div>
+                      <ul>
+                        <li><div>Freejazz</div></li>
+                        <li><div>Big Band</div></li>
+                        <li><div>Modern</div></li>
+                      </ul>
+                    </li>
+                    <li><div>Pop</div></li>
+                  </ul>
+                </li>
+                <li class="ui-state-disabled"><div>Specials (n/a)</div></li>
+              </ul>
+                    </div>
           <div class="right">
             <img src="/img/ad.jpg" style="width: 100%; margin: 20px 0;">
             <img src="/img/ad.jpg" style="width: 100%; margin: 20px 0;">
@@ -228,4 +104,5 @@
             <span class = "text-center">Made by Gr1nis, Sh1monchik, <a class="laydak" href="JavaScript:alert('Maks1mka laydak');">Maks1mka</a> and Shovch1k</span>
         </div>
     </body>
+    
 </html>
