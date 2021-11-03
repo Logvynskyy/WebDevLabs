@@ -2,47 +2,46 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Document</title>
 </head>
 <style>
     body {
-             margin: 0;
-             font-family: Arial, Helvetica, sans-serif;
-            }
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+    }
 
     .topnav {
-            overflow: hidden;
-            background-color: #333;
-            }
+        overflow: hidden;
+        background-color: #333;
+        }
 
-            .topnav a {
-            float: left;
-            color: #f2f2f2;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            font-size: 17px;
-            }
+    .topnav a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
 
-            .topnav a:hover {
-            background-color: #ddd;
-            color: black;
-            }
+    .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+    }
 
-            .topnav a.active {
-            background-color: #4CAF50;
-            color: white;
-            }
+    .topnav a.active {
+        background-color: #4CAF50;
+        color: white;
+    }
 </style>
 <body>
     <div class="topnav">
         <a href="../index.html">Главная</a>
         <a class="active">Регистрация</a>
         <a href="images.html">Картинки</a>
-      </div>
-      <div class="wrapper">
+    </div>
+    <div style="width: 50%; float: left;">
         <div class="input__text">
           <h1 class="text__title">Введіть ваше ім'я</h1>
           <input type="text" class="input__text" placeholder="Your name" list="namesList">
@@ -62,6 +61,17 @@
             <button class="add__option-btn" onclick="func()">Add name</button>
         </div>
     </div>
+    <div style="float: right;">
+        <table id="currencyTable">
+            <caption>Курс валют от Приватбанка на <span id="date"></span></caption>
+            <tr>
+                <th>Валюта 1</th>
+                <th>Валюта 2</th>
+                <th>Покупка</th>
+                <th>Продажа</th>
+            </tr>
+        </table>
+    </div>
 
     <script>
         function func(){
@@ -80,6 +90,24 @@
                 list.appendChild(option);
             }
         }
+
+        $('#date').text(new Date().toLocaleDateString());
+        const currencyObj = {
+            USD: 'доллар США',
+            UAH: 'укр. гривна',
+            RUR: 'рос. рубль',
+            EUR: 'евро',
+            BTC: 'биткоин'
+        }
+        $.getJSON("https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5", function (result) {
+            console.log(result);
+            $.each(result, function (i, field) {
+                console.log('field', field);
+                var tr = "<td>" + currencyObj[field.base_ccy] + "</td><td>" + currencyObj[field.ccy] 
+                + "</td><td>" + field.buy + "</td><td>" + field.sale + "</td>";
+                $("#currencyTable tbody").append("<tr>" + tr + "</tr>");
+            });
+        });
     </script>
 </body>
 </html>
