@@ -26,3 +26,21 @@ body {
     background-color: #4CAF50;
     color: white;
 }
+.ui-helper-hidden {
+    display: none;
+    
+ }
+ .ui-helper-hidden-accessible {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    left: 200px;
+ }
+ #ui-id-14{
+     margin-right: 20%;
+ }
