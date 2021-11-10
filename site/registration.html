@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
-    <link rel="stylesheet" href="styleReg.css">
+    <link rel="stylesheet" href="../styleReg.css">
     <title>Document</title>
     <script>
-   
-        </script>
+        setInterval(function() {
+            var date = new Date();
+            $('#clock-wrapper').html(
+                date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds()
+                );
+        }, 500);
+    </script>
 </head>
 
 <body>
@@ -33,7 +38,7 @@
         </div>
     </div>
     
-    
+    <h1 id="clock-wrapper" style="margin: 0;"></h1>
     <div style="float: right;">
         <table id="currencyTable">
             <caption>Курс валют от Приватбанка на <span id="date"></span></caption>
