@@ -10,11 +10,22 @@
         $( function() {
           $( document ).tooltip();
         } );
+        $( function() {
+    var handle = $( "#custom-handle" );
+    $( "#slider" ).slider({
+      create: function() {
+        handle.text( $( this ).slider( "value" ) );
+      },
+      slide: function( event, ui ) {
+        handle.text( ui.value );
+      }
+    });
+  } );
         </script>
 </head>
 
 <body>
-    <div class="topnav">
+    <div class="topnav">    
         <a href="../index.html">Главная</a>
         <a class="active">Регистрация</a>
         <a href="images.html">Картинки</a>
@@ -38,6 +49,9 @@
             <input type="text" class="option__text" placeholder="New name" title="Please enter your name">
             <button class="add__option-btn" onclick="func()">Add name</button>
         </div>
+        <div id="slider">
+            <label>Your age:</label><div id="custom-handle" class="ui-slider-handle"></div>
+          </div>
     </div>
     <div style="float: right;">
         <table id="currencyTable">
