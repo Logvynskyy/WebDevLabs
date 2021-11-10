@@ -7,20 +7,7 @@
     <link rel="stylesheet" href="styleReg.css">
     <title>Document</title>
     <script>
-        $( function() {
-          $( document ).tooltip();
-        } );
-        $( function() {
-    var handle = $( "#custom-handle" );
-    $( "#slider" ).slider({
-      create: function() {
-        handle.text( $( this ).slider( "value" ) );
-      },
-      slide: function( event, ui ) {
-        handle.text( ui.value );
-      }
-    });
-  } );
+   
         </script>
 </head>
 
@@ -33,7 +20,7 @@
     <div style="width: 50%; float: left;">
         <div class="input__text">
           <h1 class="text__title">Введіть ваше ім'я</h1>
-          <input type="text" class="input__text" placeholder="Your name" list="namesList">
+          <input type="text" class="input__text" placeholder="Your name" list="namesList" >
           <a href="../report.html" target="_blank">
             <button class="submit__button">Перейти до звіту</button>
         </a> 
@@ -44,15 +31,9 @@
             <option class = "namesList-opt" value="Stas">
         </datalist>
         </div>
-        <div class="add__option">
-            <h1 class="text__title">Введіть нове ім'я</h1>
-            <input type="text" class="option__text" placeholder="New name" title="Please enter your name">
-            <button class="add__option-btn" onclick="func()">Add name</button>
-        </div>
-        <div id="slider">
-            <label>Your age:</label><div id="custom-handle" class="ui-slider-handle"></div>
-          </div>
     </div>
+    
+    
     <div style="float: right;">
         <table id="currencyTable">
             <caption>Курс валют от Приватбанка на <span id="date"></span></caption>
@@ -64,7 +45,12 @@
             </tr>
         </table>
     </div>
-
+    <div class="add__option" style="margin-top: 12%;width: 30%;">
+        <h1 class="text__title">Введіть нове ім'я</h1>
+        <input type="text" class="option__text" placeholder="New name" title="Please enter your name">
+        <button class="add__option-btn" onclick="func()">Add name</button>
+    </div>
+    <div id="slider"></div>
     <script>
         function func(){
             var allOptions = document.getElementsByClassName("namesList-opt");
@@ -100,6 +86,16 @@
                 $("#currencyTable tbody").append("<tr>" + tr + "</tr>");
             });
         });
+        $( function() {
+    $( document ).tooltip({
+      track: true
+    });
+  } );
+        $( function() {
+        var handle = $( "#custom-handle" );
+            
+        } );
+
     </script>
 </body>
 </html>
