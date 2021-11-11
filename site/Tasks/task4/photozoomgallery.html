@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery</title>
+
+    <link rel='stylesheet' href='../../../unitegallery/css/unite-gallery.css'>
+    <script type='text/javascript' src='../../../unitegallery/js/jquery-11.0.min.js'></script>
+    <script type='text/javascript' src='../../../unitegallery/js/unitegallery.min.js'></script>
+    <script type='text/javascript' src='../../../unitegallery/themes/tiles/ug-theme-tiles.js'></script>
+</head>
+
+<body>
+    <div id="gallery" style="display:none;">
+
+        <a href="http://unitegallery.net">
+            <img alt="Image" src="../../../img/bmv1.jpg" data-image="../../../img/bmv1.jpg"
+                data-description="Cars" style="display:none">
+        </a>
+
+        <a href="http://unitegallery.net">
+            <img alt="Image" src="../../../img/bmv2.jpg" data-image="../../../img/bmv2.jpg"
+                data-description="Cars" style="display:none">
+        </a>
+
+        <a href="http://unitegallery.net">
+            <img alt="Image" src="../../../img/mers1.jpg" data-image="../../../img/mers1.jpg"
+                data-description="Cars" style="display:none">
+        </a>
+
+        <a href="http://unitegallery.net">
+            <img alt="Image" src="../../../img/mers2.jpg" data-image="../../../img/mers2.jpg"
+                data-description="Cars" style="display:none">
+        </a>
+    </div>
+</body>
+
+<script>
+    jQuery(document).ready(function () {
+
+jQuery("#gallery").unitegallery({
+    tiles_type: "justified"
+});
+
+});
+</script>
+
+</html>
