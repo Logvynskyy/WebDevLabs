@@ -8,9 +8,9 @@
     <title>Document</title>
     <script>
         setInterval(function() {
-            var date = new Date();
+            var time = new Date($.now());
             $('#clock-wrapper').html(
-                date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds()
+                time
                 );
         }, 500);
     </script>
@@ -45,8 +45,8 @@
         </div>
     </div>
     
-    <h1 id="clock-wrapper" style="margin: 0;"></h1>
-    <div id="digiclock"></div>
+    
+    <div id="digiclock"><h3 id="clock-wrapper" style="margin: 0;"></h3></div>
     <div style="float: right;">
         <table id="currencyTable">
             <caption>Курс валют от Приватбанка на <span id="date"></span></caption>
