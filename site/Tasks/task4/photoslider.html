@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script type='text/javascript' src='../../../unitegallery/js/jquery-11.0.min.js'></script>	
+	<script type='text/javascript' src='../../../unitegallery/js/unitegallery.min.js'></script>	
+	<link rel='stylesheet' href='../../../unitegallery/css/unite-gallery.css' type='text/css' />
+	<script type='text/javascript' src='../../../unitegallery/themes/slider/ug-theme-slider.js'></script>
+
+    <title>Photo Slider</title>
+</head>
+<body>
+    <div id="gallery" style="display:none;">
+		
+        <img alt="Image 1 Title" src="../../../img/bmv1.jpg"
+            data-image="../../../img/bmv1.jpg"
+            data-description="BMW NUMBER 1">
+        
+        <img alt="Image 2 Title" src="../../../img/bmv2.jpg"
+            data-image="../../../img/bmv2.jpg"
+            data-description="BMW NUMBER 2">
+
+        <img alt="Image 3 Title" src="../../../img/mers1.jpg"
+            data-image="../../../img/mers1.jpg"
+            data-description="MERCEDES NUMBER 1">
+
+        <img alt="Image 4 Title" src="../../../img/mers2.jpg"
+            data-image="../../../img/mers2.jpg"
+            data-description="MERCEDES NUMBER 2">
+    </div>
+
+    <script type="text/javascript"> 
+			
+            jQuery(document).ready(function(){
+                jQuery("#gallery").unitegallery();
+            });
+    </script>
+</body>
+</html>
