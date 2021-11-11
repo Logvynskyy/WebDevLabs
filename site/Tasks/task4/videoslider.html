@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script type='text/javascript' src='../../../unitegallery/js/jquery-11.0.min.js'></script>	
+	<script type='text/javascript' src='../../../unitegallery/js/unitegallery.min.js'></script>	
+	<link rel='stylesheet' href='../../../unitegallery/css/unite-gallery.css' type='text/css' />
+	<script type='text/javascript' src='../../../unitegallery/themes/slider/ug-theme-slider.js'></script>
+
+    <title>Video Slider</title>
+</head>
+<body>
+    <!--  -->
+    <div id="gallery" style="display:none;">
+        <img alt="Youtube With Images"
+            data-type="youtube"		 
+            data-videoid="-4zsY28t76k"
+            data-description="New S-Class">
+
+        <img alt="Youtube With Images"
+            data-type="youtube"
+            data-videoid="ZUIHJ0ihUCQ"
+            data-description="New Porsche Taycan">
+
+        <img alt="Youtube With Images"
+            data-type="youtube"
+            data-videoid="ePmqT87bgek"
+            data-description="New BMW X5">
+
+        <img alt="Youtube With Images"
+            data-type="youtube"
+            data-videoid="CggXSu_P2GQ"
+            data-description="New Lamborghini Urus">
+    </div>
+
+    <script type="text/javascript"> 
+			
+            jQuery(document).ready(function(){
+                jQuery("#gallery").unitegallery();
+            });
+    </script>
+</body>
+</html>
