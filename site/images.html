@@ -2,48 +2,51 @@
 <html>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css"> -->
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
 <head>
     <title>other</title>
     <style>
         #slides {
-    position: relative;
-    height: 40vh;
-    width: 100%;
-    padding: 0px;
-    margin: 0px;
-    list-style-type: none;
-}
-.slide {
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    height: 60vh;
-    width: 60%;
-    opacity: 0;
-    z-index: 1;
-    -webkit-transition: opacity 1s;
-    -moz-transition: opacity 1s;
-    -o-transition: opacity 1s;
-    transition: opacity 1s;
-}
-.showing {
-    opacity: 1;
-    z-index: 2;
-    height: 60vh;
-    width: 60%;
-}
-.slide {
-    font-size: 40px;
-    padding: 40px;
-    box-sizing: border-box;
-    color: #fff;
-}
-.image{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;	
-}
-.topnav {
+            position: relative;
+            height: 40vh;
+            width: 100%;
+            padding: 0px;
+            margin: 0px;
+            list-style-type: none;
+        }
+        .slide {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            height: 60vh;
+            width: 60%;
+            opacity: 0;
+            z-index: 1;
+            -webkit-transition: opacity 1s;
+            -moz-transition: opacity 1s;
+            -o-transition: opacity 1s;
+            transition: opacity 1s;
+        }
+        .showing {
+            opacity: 1;
+            z-index: 2;
+            height: 60vh;
+            width: 60%;
+        }
+        .slide {
+            font-size: 40px;
+            padding: 40px;
+            box-sizing: border-box;
+            color: #fff;
+        }
+        .image{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;	
+        }
+        .topnav {
             overflow: hidden;
             background-color: #333;
         }
@@ -82,14 +85,16 @@
         <li class="slide"><img src="../img/mers2.jpg" class="image"></li>
         <li class="slide"><img src="../img/bmwm5.jpg" class="image"></li>
     </ul>
+    <script>
+        var slides = document.querySelectorAll('#slides .slide');
+        var currentSlide = 0;
+        var slideInterval = setInterval(nextSlide,4000);
+        
+        function nextSlide() {
+            slides[currentSlide].className = 'slide';
+            currentSlide = (currentSlide+1)%slides.length;
+            slides[currentSlide].className = 'slide showing';
+        }
+    </script>
 </body>
-<script>var slides = document.querySelectorAll('#slides .slide');
-    var currentSlide = 0;
-    var slideInterval = setInterval(nextSlide,4000);
-    
-    function nextSlide() {
-        slides[currentSlide].className = 'slide';
-        currentSlide = (currentSlide+1)%slides.length;
-        slides[currentSlide].className = 'slide showing';
-    }</script>
 </html>

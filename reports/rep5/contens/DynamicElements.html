@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Tabs - Default functionality</title>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#tabs" ).tabs();
+  } );
+  </script>
+</head>
+<body>
+ 
+<div id="tabs">
+  <ul>
+    <li><a href="#tabs-1">Теорія</a></li>
+    <li><a href="#tabs-2">HTML</a></li>
+    <li><a href="#tabs-3">Результат на сайті</a></li>
+  </ul>
+  <div id="tabs-1">
+    <p>Синтаксис jQuery розроблений, щоб зробити орієнтування у навігації зручнішим завдяки вибору елементів DOM, створенню анімації, обробки подій, і розробки AJAX-застосунків. jQuery також надає можливості для розробників, для створення плагінів у верхній частині бібліотеки JavaScript. Використовуючи ці об'єкти, розробники можуть створювати абстракції для низькорівневої взаємодії та створювати анімацію для ефектів високого рівня. Це сприяє створенню потужних і динамічних веб-сторінок.</p>
+  </div>
+  <div id="tabs-2" style="display: flex;justify-content: space-around;">
+    <div><p>Код динамічного елементу випадне меню</p>
+        <img src="../../../img/htmlDyn.png" width="400" height="400">
+        <img src="../../../img/jsDyn2.png" alt="">
+    </div>  
+    <div><p>Код динамічного елементу підказка при наведенні</p>
+        <img src="../../../img/jsDyn1.png">
+        <img src="../../../img/htmlDyn1.png" alt="" width="500">
+    </div>
+    
+  </div>
+  <div id="tabs-3" style="display: flex;justify-content: space-around;">
+   
+   <div><p>Випадне меню</p>
+    <img src="../../../img/menu.png" alt="" width="500px">
+</div>  
+<div><p>Код динамічного елементу підказка при наведенні</p>
+    <img src="../../../img/tooltip.png" alt="" >
+</div>
+    </div>
+</div>
+ 
+ 
+</body>
+</html>
