@@ -33,11 +33,23 @@
 
     <div style="width: 70%; float: left;">
         <div class="input__text">
+          
+          <form method="POST">
           <h1 class="text__title">Введіть ваше ім'я</h1>
-          <input type="text" class="input__text" placeholder="Your name" list="namesList" >
-          <a href="../report.html" target="_blank">
-            <button class="submit__button">Перейти до звіту</button>
-        </a> 
+          <input type="text" class="input__text" placeholder="Your name" list="namesList" name="data">
+            <input type="submit", value="Відправити дані">
+            </form>
+            <?php
+                if(isset($_POST['data'])){
+                    echo "Інформація отримана";
+                }
+                else{
+                    echo "Поле для введення пусте";
+                }
+                echo "<br>";
+                echo date('m/d/Y h:i:s a', time());
+
+            ?>
           <datalist id="namesList">
             <option class = "namesList-opt" value="Vova">
             <option class = "namesList-opt" value="Maxim">
