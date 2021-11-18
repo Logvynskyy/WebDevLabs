@@ -40,7 +40,7 @@
             <input type="submit", value="Відправити дані">
             </form>
             <?php
-                if(isset($_POST['data'])){
+                if(isset($_POST["data"])){
                     echo "Інформація отримана";
                 }
                 else{
