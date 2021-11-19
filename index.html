@@ -7,6 +7,66 @@
         <link rel="stylesheet" href="style.css">
         <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
         <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+        <style>
+            body{
+                font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+                color: #656665;
+            }
+            table {
+                text-align: left;
+                border-collapse: separate;
+                border-spacing: 5px;
+                background: #ECE9E0;
+                color: #656665;
+                border: 16px solid #ECE9E0;
+                border-radius: 20px;
+                width: 75%;
+            }
+            th {
+                font-size: 18px;
+                padding: 10px;
+            }
+            td {
+                background: #F5D7BF;
+            }
+            #showBMWM5{
+                background: #F5D7BF;
+                width: 100%;
+                height: 100%;
+                text-align: left;
+            }
+    
+            #hideBMWM5{
+                background: #F5D7BF;
+                width: 25%;
+                height: 50px;
+                text-align: center;
+    
+            }
+            #BMWM5 {
+                border: 0px;
+                background: #ECE9E0;
+                border-radius: 20px;
+                padding: 25px;
+            }
+            .left, .right{
+                width: 15%;
+            }
+            .center{
+                background: burlywood;
+                width: 70%;
+                padding: 3%;
+            }
+            .right, .left, .center{
+                height: 194vh;
+                float: left;
+            }
+            .bottom{
+                width: 100%;
+                height: 6vh;
+            }
+        </style>
         <script>
         $( function() {
             $( "#menu" ).menu();
@@ -23,16 +83,16 @@
                 .append("<img src=https://3dnews.ru/assets/external/illustrations/2020/09/23/1021339/32432432.jpg width=20 height=20 />")
                 .button()
             } );
-            </script>
+        </script>
     </head>
     <body>
         <div class="topnav">
             <a class="active" href=""><img src="/img/carmodel.png" alt="" width="35" height="35"></a>
             <a href="site/registration.html"></a>
             <a href="site/images.html"></a>
-          </div>
-          <div class="left"><img src="img/ad.jpg" style="width: 100%; margin: 20px 0;">
-           
+        </div>
+        <div class="left">
+            <img src="img/ad.jpg">
             <ul id="menu">
                 <li class="ui-state-disabled">
                 <li><a href="index.html">Главная</a></li>
@@ -47,48 +107,99 @@
                   </ul>
                 </li>
                 <li class="ui-state-disabled"></li>
-              </ul>
-                    </div>
-          <div class="right">
-            <img src="img/ad.jpg" style="width: 100%; margin: 20px 0;">
-            <img src="img/ad.jpg" style="width: 100%; margin: 20px 0;">
-            <img src="img/ad.jpg" style="width: 100%; margin: 20px 0;">
-          </div>
-          <div style="margin: 0px;width: 60%;display: flex;justify-content: center;"> 
-            <table>
-                <caption style="font-weight: bolder;color: darkmagenta;" >Car shop by(Sh1monchik,Gr1nis,Shovch1k,Maks1mka)</caption>
-                <tr>
-                    <th>Mercedes-Benz</th>
-                    <th>BMW</th>
-                    <th>Renault</th>
-                    <th>Jaguar</th>
-                </tr>
-                <tr>
-                    <td>C63 AMG</td>
-                    <td>BMW I8</td>
-                    <td>Sandero Stepway</td>
-                    <td>I‑PACE</td>
-                </tr>
-                <tr>
-                    <td>MB C-klasse W206</td>
-                    <td><a href=site/bmwM5_gif.html>BMW M5</a></td>
-                    <td>Megane Sedan</td>
-                    <td>E‑PACE</td>
-                </tr>
-                <tr>
-                    <td>GLS MAYBACH</td>
-                    <td>BMW 2 Active Tourer</td>
-                    <td>KADJAR</td>
-                    <td>JAGUAR XF</td>
-                </tr>
-                <tr>
-                    <td>SLS AMG</td>
-                    <td>BMW E3</td>
-                    <td>SANDERO</td>
-                    <td>JAGUAR F‑TYPE</td>
-                </tr>
-            </table>
+             </ul>
         </div>
+
+        <div class="center"> 
+            <div>
+                <table>
+                    <caption style="font-weight: bolder;color: darkmagenta;" >Car shop by(Sh1monchik,Gr1nis,Shovch1k,Maks1mka)</caption>
+                    <tr>
+                        <th>Mercedes-Benz</th>
+                        <th>BMW</th>
+                        <th>Renault</th>
+                        <th>Jaguar</th>
+                    </tr>
+                    <tr>
+                        <td>C63 AMG</td>
+                        <td>BMW i8</td>
+                        <td>Sandero Stepway</td>
+                        <td>I‑PACE</td>
+                    </tr>
+                    <tr>
+                        <td>Седан w206</td>
+                        <td><button id = "showBMWM5">BMW M5</button></td>
+                        <td>Megane Sedan</td>
+                        <td>E‑PACE</td>
+                    </tr>
+                    <tr>
+                        <td>GLS MAYBACH</td>
+                        <td>BMW 2 Active Tourer</td>
+                        <td>KADJAR</td>
+                        <td>JAGUAR XF</td>
+                    </tr>
+                    <tr>
+                        <td>SLS AMG</td>
+                        <td>BMW E3</td>
+                        <td>SANDERO</td>
+                        <td>JAGUAR F‑TYPE</td>
+                    </tr>
+                </table>
+            </div>
+        <br>
+            <div id="BMWM5">
+                <div>
+                    <h1>BMW M5</h1>
+                    <p><a href="../site/bmwM5_gif.html"><img class="ui-widget-header" style="width: 50%;" src="../img/bmwm5.jpg"/></a></p>
+                </div>
+                
+                <div>
+                    <h3>Some information about</h3>
+                    <p>The <b>BMW M5</b> is a <i>high performance variant</i> of the <b>BMW 5</b> Series marketed under the BMW M sub-brand.</p>
+                    <p>It is considered an iconic vehicle in the sports sedan category.</p>
+                    <p title="The first M5 model">The first M5 model was hand-built in 1985 on the E28 535i chassis with a modified engine from the M1 that made it the fastest production sedan at the time.</p>
+                </div>
+                
+                <div>
+                    <h3>Versions:</h3>
+                    <ul>
+                        <li>E28 M5 (1984–1988);</li>
+                        <li>E34 M5 (1988–1995);</li>
+                        <li>E39 M5 (1998–2003);</li>
+                        <li>E60/E61 M5 (2004–2010);</li>
+                        <li>F10 M5 (2011–2016);</li>
+                        <li>F90 M5 (2017–present).</li>
+                    </ul>
+                </div>
+                <button id="hideBMWM5">
+                    Hide it.
+                </button> 
+            </div>
+        </div>
+
+        <div class="right">
+            <img src="img/ad.jpg" style="width: 100%; margin: 20px 0;">
+            <img src="img/ad.jpg" style="width: 100%; margin: 20px 0;">
+            <img src="img/ad.jpg" style="width: 100%; margin: 20px 0;">
+        </div>
+
+        <script> 
+            $(document).ready(function() {
+                $("#showBMWM5").click(function() {
+                    $("#BMWM5").show("slide", {
+        direction: "up"
+    }, 500);
+                });
+            });
+            $(document).ready(function() {    
+                $("#hideBMWM5").click(function() {
+                    $("#BMWM5").hide("slide", {
+        direction: "up"
+    }, 500);
+                });
+            });
+        </script> 
+        
         <div class="bottom">
             <span class = "text-center">Made by Gr1nis, Sh1monchik, <a class="laydak" href="JavaScript:alert('Maks1mka laydak');">Maks1mka</a> and Shovch1k</span>
             <a class="facebook" href="https://facebook.com" target="_blank">Facebook</a>
@@ -96,6 +207,7 @@
             <a class="instagram" href="https://instagram.com" target="_blank">Instagram</a>
             <a class="pinterest" href="https://pinterest.com" target="_blank">Pinterest</a>
         </div>
+        
     </body>
     
 </html>
