@@ -7,6 +7,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
     <title>Cars Table</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
     <style>
         body{
             font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
@@ -60,7 +61,7 @@
 </head>
 <body>
     <div>
-        <table >
+        <table>
             <caption style="font-weight: bolder;color: darkmagenta;" >Car shop by(Sh1monchik,Gr1nis,Shovch1k,Maks1mka)</caption>
             <tr>
                 <th>Mercedes-Benz</th>
@@ -93,20 +94,22 @@
                 <td>JAGUAR F‑TYPE</td>
             </tr>
         </table>
-        <br><br>
+        <br>
         <div id="BMWM5">
             <div>
                 <h1>BMW M5</h1>
-        
-                <p><a href="../site/bmwM5_gif.html"><img src="../img/bmwm5.jpg"/></a></p>
-        
+                <p><a href="../site/bmwM5_gif.html"><img class="ui-widget-header" src="../img/bmwm5.jpg"/></a></p>
+            </div>
+            
+            <div>
+                <h3>Some information about</h3>
                 <p>The <b>BMW M5</b> is a <i>high performance variant</i> of the <b>BMW 5</b> Series marketed under the BMW M sub-brand.</p>
                 <p>It is considered an iconic vehicle in the sports sedan category.</p>
                 <p title="The first M5 model">The first M5 model was hand-built in 1985 on the E28 535i chassis with a modified engine from the M1 that made it the fastest production sedan at the time.</p>
             </div>
+            
             <div>
-                <h2>Verions:</h2>
-        
+                <h3>Versions:</h3>
                 <ul>
                     <li>E28 M5 (1984–1988);</li>
                     <li>E34 M5 (1988–1995);</li>

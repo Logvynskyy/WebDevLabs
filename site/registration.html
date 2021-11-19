@@ -5,6 +5,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
     <link rel="stylesheet" href="../styleReg.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
     <title>Document</title>
     <script>
         setInterval(function() {
@@ -29,7 +30,8 @@
         <a class="active">Регистрация</a>
         <a href="images.html">Картинки</a>
     </div>
-    <div style="width: 50%; float: left;">
+
+    <div style="width: 70%; float: left;">
         <div class="input__text">
           <h1 class="text__title">Введіть ваше ім'я</h1>
           <input type="text" class="input__text" placeholder="Your name" list="namesList" >
@@ -43,30 +45,38 @@
             <option class = "namesList-opt" value="Stas">
         </datalist>
         </div>
+        <div class="add__option" style="margin-top: 12%;width: 30%;">
+            <h1 class="text__title">Введіть нове ім'я</h1>
+            <input type="text" class="option__text" placeholder="New name" title="Please enter your name">
+            <button class="add__option-btn" onclick="func()">Add name</button>
+        </div>
+        <div>
+            <p>Date: <input type="text" id="datepicker"></p>
+        </div>
     </div>
     
+    <div style="width: 30%; float: right;">
+        <div id="digiclock"><h3 id="clock-wrapper" style="margin: 0;"></h3></div>
+        <br>
+        <div>
+            <table id="currencyTable">
+                <caption>Курс валют от Приватбанка на <span id="date"></span></caption>
+                <tr>
+                    <th>Валюта 1</th>
+                    <th>Валюта 2</th>
+                    <th>Покупка</th>
+                    <th>Продажа</th>
+                </tr>
+            </table>
+        </div>
+        <br><br>
+        <button id="submit">Дізнатися погоду у Києві</button>
+        <div id="weather"></div>
+    </div>
     
-    <div id="digiclock"><h3 id="clock-wrapper" style="margin: 0;"></h3></div>
-    <div style="float: right;">
-        <table id="currencyTable">
-            <caption>Курс валют от Приватбанка на <span id="date"></span></caption>
-            <tr>
-                <th>Валюта 1</th>
-                <th>Валюта 2</th>
-                <th>Покупка</th>
-                <th>Продажа</th>
-            </tr>
-        </table>
-    </div>
-    <div class="add__option" style="margin-top: 12%;width: 30%;">
-        <h1 class="text__title">Введіть нове ім'я</h1>
-        <input type="text" class="option__text" placeholder="New name" title="Please enter your name">
-        <button class="add__option-btn" onclick="func()">Add name</button>
-    </div>
-    <br>
-    <button id="submit">Дізнатися погоду у Києві</button>
-    <div id="weather"></div>
     <script>
+        $("#datepicker").datepicker();
+
         function func(){
             var allOptions = document.getElementsByClassName("namesList-opt");
             var newName = document.getElementsByClassName("option__text")[0].value;
