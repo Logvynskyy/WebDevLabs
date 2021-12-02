@@ -24,6 +24,10 @@
         }
 
         .show {display: block;}
+        .dropdown {
+        position: relative;
+        display: inline-block;
+        }
     </style>
 </head>
 <body>
@@ -37,9 +41,15 @@
         </tr>
         <tr>
             <td>
-                <a href="contents/StasObjects.html" target="CONTENT">
-                    Опис об'єктів предметної галузі, які будуть в БД
-                </a>
+                <button onclick="myFunction4()" class="dropbtn">Опис об'єктів предметної галузі, які будуть в БД</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="contents/StasObjects.html" target="CONTENT">
+                        Довідник з радіотехніки
+                    </a>
+                    <a href="" target="CONTENT"></a>
+                    <a href="" target="CONTENT"></a>
+                    <a href="" target="CONTENT"></a>
+                </div>
             </td>
         </tr>
         <tr>
@@ -52,12 +62,12 @@
                     <a href="" target="CONTENT"></a>
                 </div>
             </td>
-        </tr>
-        <tr>
+            </tr>
+            <tr>
             <td>
-                <button onclick="myFunction()" class="dropbtn">Даталогічні моделі</button>
-                <div id="myDropdown" class="dropdown-content">
-                    <a href="contents/GrinDatModel.html" target="CONTENT">Архів Фотографій</a>
+                <button onclick="myFunction1()" class="dropbtn">Даталогічні моделі</button>
+                <div id="myDropdown1" class="dropdown-content">
+                    <a href="contents/GrinDatModel.html" target="CONTENT">Архів Фотографій Даталогічна</a>
                     <a href="contents/StasDatalogical.html" target="CONTENT"></a>
                     <a href="" target="CONTENT"></a>
                     <a href="" target="CONTENT"></a>
@@ -66,8 +76,8 @@
         </tr>
         <tr>
             <td>
-                <button onclick="myFunction()" class="dropbtn">Реалізації БД в СУБД</button>
-                <div id="myDropdown" class="dropdown-content">
+                <button onclick="myFunction2()" class="dropbtn">Реалізації БД в СУБД</button>
+                <div id="myDropdown2" class="dropdown-content">
                     <a href="contents/GrinBd.html" target="CONTENT">Архів Фотографій</a>
                     <a href="contents/StasSUBD.html" target="CONTENT"></a>
                     <a href="" target="CONTENT"></a>
@@ -77,8 +87,8 @@
         </tr>
         <tr>
             <td>
-                <button onclick="myFunction()" class="dropbtn">Виведення,введення даних в БД</button>
-                <div id="myDropdown" class="dropdown-content">
+                <button onclick="myFunction3()" class="dropbtn">Виведення,введення даних в БД</button>
+                <div id="myDropdown3" class="dropdown-content">
                     <a href="contents/GrinBdOut.html" target="CONTENT">Архів Фотографій</a>
                     <a href="contents/StasIO_BD.html" target="CONTENT"></a>
                     <a href="" target="CONTENT"></a>
@@ -97,6 +107,15 @@
     <script>
         function myFunction() {
           document.getElementById("myDropdown").classList.toggle("show");
+        }
+        function myFunction1() {
+          document.getElementById("myDropdown1").classList.toggle("show");
+        }
+        function myFunction2() {
+          document.getElementById("myDropdown2").classList.toggle("show");;
+        }
+        function myFunction3() {;
+          document.getElementById("myDropdown3").classList.toggle("show");
         }
         
         window.onclick = function(event) {
