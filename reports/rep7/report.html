@@ -5,6 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            overflow: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+    
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .show {display: block;}
+    </style>
 </head>
 <body>
     <table border=3px width="100%">
@@ -24,41 +44,73 @@
         </tr>
         <tr>
             <td>
-                <a href="contents/StasInfological.html" target="CONTENT">
-                    Інфологічна модель. Опис моделі
-                </a>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="contents/StasDatalogical.html" target="CONTENT">
-                    Даталогічна модель. Опис моделі, зв'язки між таблицями
-                </a>
+                <button onclick="myFunction()" class="dropbtn">Іфологічні моделі</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="contents/GrinInfModel.html" target="CONTENT">Архів Фотографій</a>
+                    <a href="contents/StasInfological.html" target="CONTENT"></a>
+                    <a href="" target="CONTENT"></a>
+                    <a href="" target="CONTENT"></a>
+                </div>
             </td>
         </tr>
         <tr>
             <td>
-                <a href="contents/StasSUBD.html" target="CONTENT">
-                    Реалізація БД в СУБД MySQL phpMyAdmin
-                </a>
+                <button onclick="myFunction()" class="dropbtn">Даталогічні моделі</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="contents/GrinDatModel.html" target="CONTENT">Архів Фотографій</a>
+                    <a href="contents/StasDatalogical.html" target="CONTENT"></a>
+                    <a href="" target="CONTENT"></a>
+                    <a href="" target="CONTENT"></a>
+                </div>
             </td>
         </tr>
         <tr>
             <td>
-                <a href="contents/StasIO_BD.html" target="CONTENT">
-                    Введення, виведення даних в БД (із БД), пошук даних в БД
-                </a>
+                <button onclick="myFunction()" class="dropbtn">Реалізації БД в СУБД</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="contents/GrinBd.html" target="CONTENT">Архів Фотографій</a>
+                    <a href="contents/StasSUBD.html" target="CONTENT"></a>
+                    <a href="" target="CONTENT"></a>
+                    <a href="" target="CONTENT"></a>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button onclick="myFunction()" class="dropbtn">Виведення,введення даних в БД</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="contents/GrinBdOut.html" target="CONTENT">Архів Фотографій</a>
+                    <a href="contents/StasIO_BD.html" target="CONTENT"></a>
+                    <a href="" target="CONTENT"></a>
+                    <a href="" target="CONTENT"></a>
+                </div>
             </td>
         </tr>
         <tr>
             <td>
                 <a href="contents/vysnovky.html" target="CONTENT">
-                    Висновки                
+                    Висновки
                 </a>
             </td>
         </tr>
     </table>
+    <script>
+        function myFunction() {
+          document.getElementById("myDropdown").classList.toggle("show");
+        }
+        
+        window.onclick = function(event) {
+          if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+              }
+            }
+          }
+        }
     </script>
 </body>
 </html>
