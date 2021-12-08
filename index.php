@@ -109,7 +109,11 @@ session_start();
                     <td><?= $car[7]?></td>
                     <td><?= $car[8]?></td>
                     <td><?= $car[2]?></td>
-                    <td><?= $car[4]?></td>
+                    <td><?php if($car[4] == 3){?>
+                        Салон
+                    <?php 
+                        }
+                    ?></td>
 
                     <td><a href="deleteCar.php?id=<?= $car[0] ?>" style="text-decoration: none;color:darkred;">Delete</a></td>
                 </tr>
