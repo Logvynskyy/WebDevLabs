@@ -8,7 +8,7 @@
     $database = "carshop"; // Имя базы данных, которую создали
      
     // Подключение к базе данных через MySQLi
-    $mysqli = new mysqli($server, $username, $password, $database);
+    $mysqli =  @mysqli_connect($server, $username, $password, $database);
  
     // Проверяем, успешность соединения. 
     if ($mysqli->connect_errno) { 

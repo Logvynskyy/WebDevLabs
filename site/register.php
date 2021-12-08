@@ -3,7 +3,7 @@
     session_start();
  
     //Добавляем файл подключения к БД
-    require_once("connection.php");
+    require_once("../connection.php");
  
     //Объявляем ячейку для добавления ошибок, которые могут возникнуть при обработке формы.
     $_SESSION["error_messages"] = '';
@@ -28,7 +28,7 @@
          
                 //Возвращаем пользователя на страницу регистрации
                 header("HTTP/1.1 301 Moved Permanently");
-                header("Location: ".$address_site."/registrationNew.php");
+                header("Location: ".$address_site."/site/registrationNew.php");
          
                 //Останавливаем скрипт
                 exit();
@@ -41,7 +41,7 @@
          
             //Возвращаем пользователя на страницу регистрации
             header("HTTP/1.1 301 Moved Permanently");
-            header("Location: ".$address_site."/registrationNew.php");
+            header("Location: ".$address_site."/site/registrationNew.php");
          
             //Останавливаем скрипт
             exit();
@@ -63,7 +63,7 @@
                  
                 //Возвращаем пользователя на страницу регистрации
                 header("HTTP/1.1 301 Moved Permanently");
-                header("Location: ".$address_site."/registrationNew.php");
+                header("Location: ".$address_site."/site/registrationNew.php");
          
                 //Останавливаем  скрипт
                 exit();
@@ -75,13 +75,14 @@
              
             //Возвращаем пользователя на страницу регистрации
             header("HTTP/1.1 301 Moved Permanently");
-            header("Location: ".$address_site."/registrationNew.php");
+            header("Location: ".$address_site."/site/registrationNew.php");
          
             //Останавливаем  скрипт
             exit();
         }
-
-        $result_query_insert = $mysqli->query("INSERT INTO `Users` (name, password, isAdmin) VALUES ('".$first_name."', '".$password."', '0')");
+        
+        $query = "INSERT INTO `Users`(`Name`, `Password`, `isAdmin`) VALUES ('$first_name', '$password', '0')";
+        $result_query_insert = mysqli_query($mysqli, $query);
  
         if(!$result_query_insert){
             // Сохраняем в сессию сообщение об ошибке. 
@@ -89,7 +90,7 @@
             
             //Возвращаем пользователя на страницу регистрации
             header("HTTP/1.1 301 Moved Permanently");
-            header("Location: ".$address_site."/registrationNew.php");
+            header("Location: ".$address_site."/site/registrationNew.php");
         
             //Останавливаем  скрипт
             exit();
@@ -99,7 +100,7 @@
         
             //Отправляем пользователя на страницу авторизации
             header("HTTP/1.1 301 Moved Permanently");
-            header("Location: ".$address_site."/form_auth.php");
+            header("Location: ".$address_site."/site/form_auth.php");
         }
         
         /* Завершение запроса */

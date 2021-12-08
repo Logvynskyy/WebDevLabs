@@ -44,8 +44,8 @@
                 <tbody><tr>
                     <td> Login: </td>
                     <td>
-                        <input type="email" name="first_name" required="required"><br>
-                        <span id="valid_email_message" class="mesage_error"></span>
+                        <input type="text" name="first_name" required="required"><br>
+                        <!-- <span id="valid_email_message" class="mesage_error"></span> -->
                     </td>
                 </tr>
           
@@ -53,7 +53,7 @@
                     <td> Пароль: </td>
                     <td>
                         <input type="password" name="password" placeholder="минимум 6 символов" required="required"><br>
-                        <span id="valid_password_message" class="mesage_error"></span>
+                        <!-- <span id="valid_password_message" class="mesage_error"></span> -->
                     </td>
                 </tr>
  

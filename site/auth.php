@@ -3,7 +3,7 @@
         session_start();
  
         //Добавляем файл подключения к БД
-        require_once("connection.php");
+        require_once("../connection.php");
         //Объявляем ячейку для добавления ошибок, которые могут возникнуть при обработке формы.
         $_SESSION["error_messages"] = '';
  
@@ -30,7 +30,7 @@
          
                 //Возвращаем пользователя на страницу регистрации
                 header("HTTP/1.1 301 Moved Permanently");
-                header("Location: ".$address_site."/authNew.php");
+                header("Location: ".$address_site."/site/authNew.php");
          
                 //Останавливаем скрипт
                 exit();
@@ -43,7 +43,7 @@
          
             //Возвращаем пользователя на страницу регистрации
             header("HTTP/1.1 301 Moved Permanently");
-            header("Location: ".$address_site."/authNew.php");
+            header("Location: ".$address_site."site/authNew.php");
          
             //Останавливаем скрипт
             exit();
@@ -65,7 +65,7 @@
                  
                 //Возвращаем пользователя на страницу регистрации
                 header("HTTP/1.1 301 Moved Permanently");
-                header("Location: ".$address_site."/authNew.php");
+                header("Location: ".$address_site."/site/authNew.php");
          
                 //Останавливаем скрипт
                 exit();
@@ -77,7 +77,7 @@
              
             //Возвращаем пользователя на страницу регистрации
             header("HTTP/1.1 301 Moved Permanently");
-            header("Location: ".$address_site."/authNew.php");
+            header("Location: ".$address_site."/site/authNew.php");
          
             //Останавливаем скрипт
             exit();
@@ -91,7 +91,7 @@
             
             //Возвращаем пользователя на страницу регистрации
             header("HTTP/1.1 301 Moved Permanently");
-            header("Location: ".$address_site."/authNew.php");
+            header("Location: ".$address_site."/site/authNew.php");
         
             //Останавливаем скрипт
             exit();
@@ -115,7 +115,7 @@
                 
                 //Возвращаем пользователя на страницу авторизации
                 header("HTTP/1.1 301 Moved Permanently");
-                header("Location: ".$address_site."/authNew.php");
+                header("Location: ".$address_site."/site/authNew.php");
         
                 //Останавливаем скрипт
                 exit();
