@@ -20,4 +20,8 @@
  
     //Для удобства, добавим здесь переменную, которая будет содержать адрес (URL) нашего сайта
     $address_site = "http://webdevlabs";
+    $connect = mysqli_connect($server,$username,$password,$database);
+if(!$connect){
+    echo 'error';
+}
 ?>

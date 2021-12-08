@@ -1,6 +1,7 @@
 <?php
-    //Запускаем сессию
-    session_start();
+
+require_once 'connection.php';
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -94,10 +95,10 @@
                 </tr>
                
                 <?php
-                $connection = new mysqli("localhost","root","","carshop");
-                $query = "SELECT * into outfile ‘D:\OpenServer\domains\WebDevLabs\text.csv’ lines terminated by ‘
-                ‘ from cars ";
-                $result = $connection->query($query);
+                // $connection = new mysqli("localhost","root","","carshop");
+                // $query = "SELECT * into outfile ‘D:\OpenServer\domains\WebDevLabs\text.csv’ lines terminated by ‘
+                // ‘ from cars ";
+                // $result = $connection->query($query);
                 $cars = mysqli_query($connect, "SELECT * FROM `cars`,`models` WHERE cars.Name = models.ID");
                 $cars = mysqli_fetch_all($cars);
                  
