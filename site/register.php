@@ -82,7 +82,7 @@
         }
         
         $query = "INSERT INTO `Users`(`Name`, `Password`, `isAdmin`) VALUES ('$first_name', '$password', '0')";
-        $result_query_insert = mysqli_query($mysqli, $query);
+        $result_query_insert = mysqli_query($mysqli, $query) or die(mysqli_error($mysqli));
  
         if(!$result_query_insert){
             // Сохраняем в сессию сообщение об ошибке. 
@@ -100,7 +100,7 @@
         
             //Отправляем пользователя на страницу авторизации
             header("HTTP/1.1 301 Moved Permanently");
-            header("Location: ".$address_site."/site/form_auth.php");
+            header("Location: ".$address_site."/site/authNew.php");
         }
         
         /* Завершение запроса */
