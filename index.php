@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -39,7 +40,7 @@
                 <li><div>Регистрация</div>
                   <ul>
                     <li class="ui-state-disabled">
-                    <li><a href="site/registration.html">Новый пользыватель</a></li>
+                    <li><a href="site/registrationNew.php">Новый пользыватель</a></li>
                     <li><a href="site/registration.html">Войти</a></li>
                   </ul>
                 </li>
@@ -54,40 +55,34 @@
             <img src="img/ad.jpg" style="width: 100%; margin: 20px 0;">
             <img src="img/ad.jpg" style="width: 100%; margin: 20px 0;">
           </div>
-          <div style="margin: 0px;width: 60%;display: flex;justify-content: center;"> 
-            <table>
-                <caption style="font-weight: bolder;color: darkmagenta;" >Car shop by(Sh1monchik,Gr1nis,Shovch1k,Maks1mka)</caption>
-                <tr>
-                    <th>Mercedes-Benz</th>
-                    <th>BMW</th>
-                    <th>Renault</th>
-                    <th>Jaguar</th>
+          <div style="margin: 0px;width: 60%;display: flex;justify-content: center;">
+            <!-- <table>
+                <caption style="font-weight: bolder;color: darkmagenta;" >Car shop by(Sh1monchik,Gr1nis,Shovch1k,Maks1mka)</caption> 
+                <tr>    
+                    <th>Марка</th>
+                    <th>Модель</th>
+                    <th>Цена</th>
+                    <th>Лошадиные силы</th>
+                    <th>Продавец</th>
                 </tr>
+               
+                <?php
+                $users = mysqli_query($connect, "SELECT * FROM `users`");
+                $users = mysqli_fetch_all($users); 
+                foreach($users as $user) {
+                ?>
                 <tr>
-                    <td>C63 AMG</td>
-                    <td>BMW I8</td>
-                    <td>Sandero Stepway</td>
-                    <td>I‑PACE</td>
+                    <td><?= $user[0]?></td>
+                    <td><?= $user[1]?></td>
+                    <td><?= $user[2]?></td>
+                    <td><?= $user[2]?></td>
+                    <td><?= $user[2]?></td>
+                    <td><a href="vendor/delete.php?id=<?= $user[0] ?>" style="text-decoration: none;color:darkred;">Delete</a></td>
                 </tr>
-                <tr>
-                    <td>MB C-klasse W206</td>
-                    <td><a href=site/bmwM5_gif.html>BMW M5</a></td>
-                    <td>Megane Sedan</td>
-                    <td>E‑PACE</td>
-                </tr>
-                <tr>
-                    <td>GLS MAYBACH</td>
-                    <td>BMW 2 Active Tourer</td>
-                    <td>KADJAR</td>
-                    <td>JAGUAR XF</td>
-                </tr>
-                <tr>
-                    <td>SLS AMG</td>
-                    <td>BMW E3</td>
-                    <td>SANDERO</td>
-                    <td>JAGUAR F‑TYPE</td>
-                </tr>
-            </table>
+                <?php 
+                }
+                ?>
+            </table> -->
         </div>
         <div class="bottom">
             <span class = "text-center">Made by Gr1nis, Sh1monchik, <a class="laydak" href="JavaScript:alert('Maks1mka laydak');">Maks1mka</a> and Shovch1k</span>
