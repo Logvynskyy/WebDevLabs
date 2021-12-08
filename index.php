@@ -1,6 +1,6 @@
 <?php
-
-require_once 'connection.php';
+    //Запускаем сессию
+    session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,7 +44,7 @@ require_once 'connection.php';
                   <ul>
                     <li class="ui-state-disabled">
                     <li><a href="site/registrationNew.php">Новый пользыватель</a></li>
-                    <li><a href="site/registration.html">Войти</a></li>
+                    <li><a href="site/authNew.php">Войти</a></li>
                   </ul>
                 </li>
                 <li><a href="site/images.html">Картинки</a></li>
@@ -52,13 +52,37 @@ require_once 'connection.php';
                 </li>
                 <li class="ui-state-disabled"></li>
               </ul>
+        </div>
+        <div class="right">
+            <img src="img/ad.jpg" style="width: 100%; margin: 20px 0;">
+            <img src="img/ad.jpg" style="width: 100%; margin: 20px 0;">
+            <img src="img/ad.jpg" style="width: 100%; margin: 20px 0;">
+        </div>
+        <div id="auth_block">
+            <?php
+                //Проверяем авторизован ли пользователь
+                if(!isset($_SESSION['first_name']) && !isset($_SESSION['password'])){
+                    // если нет, то выводим блок с ссылками на страницу регистрации и авторизации
+            ?>
+            <div id="link_register">
+                <a href="site/registrationNew.php">Регистрация</a>
+            </div>
+            
+            <div id="link_auth">
+                <a href="site/authNew.php">Авторизация</a>
+            </div>
+            <?php
+                }else{
+                    //Если пользователь авторизован, то выводим ссылку Выход
+            ?> 
+                    <div id="link_logout">
+                        <a href="site/logout.php">Выход</a>
                     </div>
-          <div class="right">
-            <img src="img/ad.jpg" style="width: 100%; margin: 20px 0;">
-            <img src="img/ad.jpg" style="width: 100%; margin: 20px 0;">
-            <img src="img/ad.jpg" style="width: 100%; margin: 20px 0;">
-          </div>
-          <div style="margin: 0px;width: 60%;display: flex;justify-content: center;">
+            <?php
+                }
+            ?>
+        </div>
+        <div style="margin: 0px;width: 60%;display: flex;justify-content: center;">
             <table>
                 <caption style="font-weight: bolder;color: darkmagenta;" >Car shop by(Sh1monchik,Gr1nis,Shovch1k,Maks1mka)</caption> 
                 <tr>    
