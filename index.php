@@ -1,4 +1,7 @@
+<?php
 
+require_once 'connection.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -56,33 +59,39 @@
             <img src="img/ad.jpg" style="width: 100%; margin: 20px 0;">
           </div>
           <div style="margin: 0px;width: 60%;display: flex;justify-content: center;">
-            <!-- <table>
+            <table>
                 <caption style="font-weight: bolder;color: darkmagenta;" >Car shop by(Sh1monchik,Gr1nis,Shovch1k,Maks1mka)</caption> 
                 <tr>    
                     <th>Марка</th>
                     <th>Модель</th>
-                    <th>Цена</th>
                     <th>Лошадиные силы</th>
+                    <th>Цена</th>
                     <th>Продавец</th>
                 </tr>
                
                 <?php
-                $users = mysqli_query($connect, "SELECT * FROM `users`");
-                $users = mysqli_fetch_all($users); 
-                foreach($users as $user) {
+                $connection = new mysqli("localhost","root","","carshop");
+                $query = "SELECT * into outfile ‘D:\OpenServer\domains\WebDevLabs\text.csv’ lines terminated by ‘
+                ‘ from cars ";
+                $result = $connection->query($query);
+                $cars = mysqli_query($connect, "SELECT * FROM `cars`,`models` WHERE cars.Name = models.ID");
+                $cars = mysqli_fetch_all($cars);
+                 
+                foreach($cars as $car) {
                 ?>
                 <tr>
-                    <td><?= $user[0]?></td>
-                    <td><?= $user[1]?></td>
-                    <td><?= $user[2]?></td>
-                    <td><?= $user[2]?></td>
-                    <td><?= $user[2]?></td>
-                    <td><a href="vendor/delete.php?id=<?= $user[0] ?>" style="text-decoration: none;color:darkred;">Delete</a></td>
+                    <td><?= $car[6]?></td>
+                    <td><?= $car[7]?></td>
+                    <td><?= $car[8]?></td>
+                    <td><?= $car[2]?></td>
+                    <td><?= $car[4]?></td>
+
+                    <td><a href="deleteCar.php?id=<?= $car[0] ?>" style="text-decoration: none;color:darkred;">Delete</a></td>
                 </tr>
                 <?php 
                 }
                 ?>
-            </table> -->
+            </table>
         </div>
         <div class="bottom">
             <span class = "text-center">Made by Gr1nis, Sh1monchik, <a class="laydak" href="JavaScript:alert('Maks1mka laydak');">Maks1mka</a> and Shovch1k</span>
