@@ -89,49 +89,46 @@ mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
 
 
-$sql = "INSERT INTO `cars`(`Name`, `Price`, `isNew`) VALUES ('1','24000','1')"; mysqli_query($conn, $sql) or die(mysqli_error($conn));
-$sql = "INSERT INTO `cars`(`Name`, `Price`, `isNew`) VALUES ('2','47000','0')"; mysqli_query($conn, $sql) or die(mysqli_error($conn));
-$sql = "INSERT INTO `cars`(`Name`, `Price`, `isNew`) VALUES ('3','77000','1')"; mysqli_query($conn, $sql) or die(mysqli_error($conn));
-$sql = "INSERT INTO `cars`(`Name`, `Price`, `isNew`) VALUES ('4','71000','0')"; mysqli_query($conn, $sql) or die(mysqli_error($conn));
-$sql = "INSERT INTO `cars`(`Name`, `Price`, `isNew`) VALUES ('5','33000','0')"; mysqli_query($conn, $sql) or die(mysqli_error($conn));
-$sql = "INSERT INTO `cars`(`Name`, `Price`, `isNew`) VALUES ('6','17000','1')"; mysqli_query($conn, $sql) or die(mysqli_error($conn));
-$sql = "INSERT INTO `cars`(`Name`, `Price`, `isNew`) VALUES ('7','25000','1')"; mysqli_query($conn, $sql) or die(mysqli_error($conn));
-$sql = "INSERT INTO `cars`(`Name`, `Price`, `isNew`) VALUES ('8','13000','1')"; mysqli_query($conn, $sql) or die(mysqli_error($conn));
-$sql = "INSERT INTO `cars`(`Name`, `Price`, `isNew`) VALUES ('6','40000','0')"; mysqli_query($conn, $sql) or die(mysqli_error($conn));
-$sql = "INSERT INTO `cars`(`Name`, `Price`, `isNew`) VALUES ('5','72000','1')"; mysqli_query($conn, $sql) or die(mysqli_error($conn));
-$sql = "INSERT INTO `cars`(`Name`, `Price`, `isNew`) VALUES ('4','76000','0')"; mysqli_query($conn, $sql) or die(mysqli_error($conn));
-$sql = "INSERT INTO `cars`(`Name`, `Price`, `isNew`) VALUES ('10','78000','0')"; mysqli_query($conn, $sql) or die(mysqli_error($conn));
-$sql = "INSERT INTO `cars`(`Name`, `Price`, `isNew`) VALUES ('15','75000','0')"; mysqli_query($conn, $sql) or die(mysqli_error($conn));
-$sql = "INSERT INTO `cars`(`Name`, `Price`, `isNew`) VALUES ('11','11000','1')"; mysqli_query($conn, $sql) or die(mysqli_error($conn));
-$sql = "INSERT INTO `cars`(`Name`, `Price`, `isNew`) VALUES ('11','33500','1')"; mysqli_query($conn, $sql) or die(mysqli_error($conn));
-$sql = "INSERT INTO `cars`(`Name`, `Price`, `isNew`) VALUES ('14','75600','0')"; mysqli_query($conn, $sql) or die(mysqli_error($conn));
-$sql = "INSERT INTO `cars`(`Name`, `Price`, `isNew`) VALUES ('3','63500','1')"; mysqli_query($conn, $sql) or die(mysqli_error($conn));
-$sql = "INSERT INTO `cars`(`Name`, `Price`, `isNew`) VALUES ('4','36900','1')"; mysqli_query($conn, $sql) or die(mysqli_error($conn));
+$sql = "INSERT INTO `cars`(`Name`, `Price`, `isNew`) VALUES ('1','24000','1')"; 
+mysqli_query($conn, $sql) or die(mysqli_error($conn));
+$sql = "INSERT INTO `cars`(`Name`, `Price`, `isNew`) VALUES ('2','47000','0')"; 
+mysqli_query($conn, $sql) or die(mysqli_error($conn));
+$sql = "INSERT INTO `cars`(`Name`, `Price`, `isNew`) VALUES ('3','77000','1')"; 
+mysqli_query($conn, $sql) or die(mysqli_error($conn));
+$sql = "INSERT INTO `cars`(`Name`, `Price`, `isNew`) VALUES ('4','71000','0')"; 
+mysqli_query($conn, $sql) or die(mysqli_error($conn));
+$sql = "INSERT INTO `cars`(`Name`, `Price`, `isNew`) VALUES ('5','33000','0')"; 
+mysqli_query($conn, $sql) or die(mysqli_error($conn));
+$sql = "INSERT INTO `cars`(`Name`, `Price`, `isNew`) VALUES ('6','17000','1')"; 
+mysqli_query($conn, $sql) or die(mysqli_error($conn));
+$sql = "INSERT INTO `cars`(`Name`, `Price`, `isNew`) VALUES ('7','25000','1')"; 
+mysqli_query($conn, $sql) or die(mysqli_error($conn));
+$sql = "INSERT INTO `cars`(`Name`, `Price`, `isNew`) VALUES ('8','13000','1')"; 
+mysqli_query($conn, $sql) or die(mysqli_error($conn));
+$sql = "INSERT INTO `cars`(`Name`, `Price`, `isNew`) VALUES ('6','40000','0')"; 
+mysqli_query($conn, $sql) or die(mysqli_error($conn));
+$sql = "INSERT INTO `cars`(`Name`, `Price`, `isNew`) VALUES ('5','72000','1')"; 
+mysqli_query($conn, $sql) or die(mysqli_error($conn));
+$sql = "INSERT INTO `cars`(`Name`, `Price`, `isNew`) VALUES ('4','76000','0')"; 
+mysqli_query($conn, $sql) or die(mysqli_error($conn));
+$sql = "INSERT INTO `cars`(`Name`, `Price`, `isNew`) VALUES ('10','78000','0')"; 
+mysqli_query($conn, $sql) or die(mysqli_error($conn));
+$sql = "INSERT INTO `cars`(`Name`, `Price`, `isNew`) VALUES ('15','75000','0')"; 
+mysqli_query($conn, $sql) or die(mysqli_error($conn));
+$sql = "INSERT INTO `cars`(`Name`, `Price`, `isNew`) VALUES ('11','11000','1')"; 
+mysqli_query($conn, $sql) or die(mysqli_error($conn));
+$sql = "INSERT INTO `cars`(`Name`, `Price`, `isNew`) VALUES ('11','33500','1')"; 
+mysqli_query($conn, $sql) or die(mysqli_error($conn));
+$sql = "INSERT INTO `cars`(`Name`, `Price`, `isNew`) VALUES ('14','75600','0')"; 
+mysqli_query($conn, $sql) or die(mysqli_error($conn));
+$sql = "INSERT INTO `cars`(`Name`, `Price`, `isNew`) VALUES ('3','63500','1')"; 
+mysqli_query($conn, $sql) or die(mysqli_error($conn));
+$sql = "INSERT INTO `cars`(`Name`, `Price`, `isNew`) VALUES ('4','36900','1')"; 
+mysqli_query($conn, $sql) or die(mysqli_error($conn));
 $sql = "INSERT INTO `cars`(`Name`, `Price`, `isNew`) VALUES ('1','52000','0')"; 
 mysqli_query($conn, $sql) or die(mysqli_error($conn));
 $sql = "INSERT INTO `cars`(`Name`, `Price`, `isNew`) VALUES ('2','41000','0')";
 mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
-
-// $sql = "SELECT * FROM drivers";
-// if($result = $conn->query($sql)){
-//     foreach($result as $row){ 
-//         $name = $row["Name"];
-//         $sname = $row["SName"];
-//         $fname = $row["FName"];
-//         echo $sname, " - ", $name,  " - ", $fname, "<br>";
-//     }
-//     echo "<br>";
-// }
-
-// $sql = "SELECT * FROM buses WHERE `Model` LIKE 'MAN'";
-// if($result = $conn->query($sql)){
-//     foreach($result as $row){ 
-//         $model = $row["Model"];
-//         $sits = $row["Sits"];
-//         $mileage = $row["Mileage"];
-//         echo $model, " Number of seats - ", $sits, " Meleage of bus - ", $mileage;
-//     }
-// }
 
 mysqli_close($conn);
