@@ -164,3 +164,24 @@ display: block;
 text-decoration: none;
 }
 .ul-menu { width: 100%; }
+
+.goog-text-highlight {
+    background-color: transparent;
+    box-shadow: none;
+}
+.skiptranslate {
+    display: none;
+    height: 0;
+}
+.language__img {
+    cursor: pointer;
+}
+
+.language {
+    float:right;
+}
+
+b{
+    color: white;
+    font-size: 20px;
+}

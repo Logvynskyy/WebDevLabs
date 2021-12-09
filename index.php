@@ -29,12 +29,42 @@ session_start();
                 .button()
             } );
             </script>
+            <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+            <script src="google-translate.js"></script>
+            <script src="//translate.google.com/translate_a/element.js?cb=TranslateInit"></script>
+        <style>
+            .goog-text-highlight {
+                background-color: transparent;
+                box-shadow: none;
+            }
+            .skiptranslate {
+                display: none;
+                height: 0;
+            }
+            .language__img {
+                cursor: pointer;
+            }
+
+            .language {
+                float:right;
+            }
+            b{
+                
+                color: white;
+                font-size: 30px;
+            }
+        </style>
     </head>
     <body>
         <div class="topnav">
             <a class="active" href=""><img src="/img/carmodel.png" alt="" width="35" height="35"></a>
             <a href="site/registration.html"></a>
             <a href="site/images.html"></a>
+            <div class="language">
+                <b data-google-lang="en" class="leng">en</b>
+                <b data-google-lang="ru" class="leng">ru</b>
+                <b data-google-lang="uk" class="leng">ua</b>
+            </div>
           </div>
           <div class="left"><img src="img/ad.jpg" style="width: 100%; margin: 20px 0;">
            
@@ -84,43 +114,46 @@ session_start();
             ?>
         </div>
         <div style="margin: 0px;width: 60%;display: flex;justify-content: center;">
-            <table>
-                <caption style="font-weight: bolder;color: darkmagenta;" >Car shop by(Sh1monchik,Gr1nis,Shovch1k,Maks1mka)</caption> 
-                <tr>    
-                    <th>Марка</th>
-                    <th>Модель</th>
-                    <th>Лошадиные силы</th>
-                    <th>Цена</th>
-                    <th>Продавец</th>
-                </tr>
-               
-                <?php
-                // $connection = new mysqli("localhost","root","","carshop");
-                // $query = "SELECT * into outfile ‘D:\OpenServer\domains\WebDevLabs\text.csv’ lines terminated by ‘
-                // ‘ from cars ";
-                // $result = $connection->query($query);
-                $cars = mysqli_query($connect, "SELECT * FROM `cars`,`models` WHERE cars.Name = models.ID");
-                $cars = mysqli_fetch_all($cars);
-                 
-                foreach($cars as $car) {
-                ?>
-                <tr>
-                    <td><?= $car[6]?></td>
-                    <td><?= $car[7]?></td>
-                    <td><?= $car[8]?></td>
-                    <td><?= $car[2]?></td>
-                    <td><?php if($car[4] == 3){?>
-                        Салон
-                    <?php 
-                        }
-                    ?></td>
+            
+            <div>
+                <table>
+                    <caption style="font-weight: bolder;color: darkmagenta;" >Car shop by(Sh1monchik,Gr1nis,Shovch1k,Maks1mka)</caption> 
+                    <tr>    
+                        <th>Марка</th>
+                        <th>Модель</th>
+                        <th>Лошадиные силы</th>
+                        <th>Цена</th>
+                        <th>Продавец</th>
+                    </tr>
+                
+                    <?php
+                    // $connection = new mysqli("localhost","root","","carshop");
+                    // $query = "SELECT * into outfile ‘D:\OpenServer\domains\WebDevLabs\text.csv’ lines terminated by ‘
+                    // ‘ from cars ";
+                    // $result = $connection->query($query);
+                    $cars = mysqli_query($connect, "SELECT * FROM `cars`,`models` WHERE cars.Name = models.ID");
+                    $cars = mysqli_fetch_all($cars);
+                    
+                    foreach($cars as $car) {
+                    ?>
+                    <tr>
+                        <td><?= $car[6]?></td>
+                        <td><?= $car[7]?></td>
+                        <td><?= $car[8]?></td>
+                        <td><?= $car[2]?></td>
+                        <td><?php if($car[4] == 3){?>
+                            Салон
+                        <?php 
+                            }
+                        ?></td>
 
-                    <td><a href="deleteCar.php?id=<?= $car[0] ?>" style="text-decoration: none;color:darkred;">Delete</a></td>
-                </tr>
-                <?php 
-                }
-                ?>
-            </table>
+                        <td><a href="deleteCar.php?id=<?= $car[0] ?>" style="text-decoration: none;color:darkred;">Delete</a></td>
+                    </tr>
+                    <?php 
+                    }
+                    ?>
+                </table>
+            </div>
         </div>
         <div class="bottom">
             <span class = "text-center">Made by Gr1nis, Sh1monchik, <a class="laydak" href="JavaScript:alert('Maks1mka laydak');">Maks1mka</a> and Shovch1k</span>
