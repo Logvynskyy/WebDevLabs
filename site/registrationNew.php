@@ -8,15 +8,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styleRegNew.css">
+    <link rel="stylesheet" href="../style.css">
     <title>Registration New</title>
 </head>
 <body>
-    <div class="topnav">    
-        <a href="../index.php">Главная</a>
-        <a class="active">Регистрация</a>
-        <a href="images.html">Картинки</a>
+    <div class="topnav">
+        <div class="head">
+            <a href="../index.php"><img src="/img/carmodel.png" alt="" width="35" height="35"></a>
+        </div>
+        <div class="head">
+            <a class="active">Регистрация</a>
+        </div>
+        <div class="head">
+            <a href="images.html">Картинки</a>  
+        </div>
     </div>
+    <div class="left">
+        <img src="img\ad.jpg" style="width: 100%; margin: 20px 0;">
+        <img src="img\ad.jpg" style="width: 100%; margin: 20px 0;">
+        <img src="img\ad.jpg" style="width: 100%; margin: 20px 0;">
+    </div>
+    <div class="right">
+        <img src="img/ad.jpg" style="width: 100%; margin: 20px 0;">
+        <img src="img/ad.jpg" style="width: 100%; margin: 20px 0;">
+        <img src="img/ad.jpg" style="width: 100%; margin: 20px 0;">
+    </div>
+    
+    
     <div id="form_register">
             <h2>Форма регистрации</h2>
  

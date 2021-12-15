@@ -29,101 +29,63 @@ session_start();
                 .button()
             } );
             </script>
-            <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
-            <script src="google-translate.js"></script>
-            <script src="//translate.google.com/translate_a/element.js?cb=TranslateInit"></script>
-        <style>
-            .goog-text-highlight {
-                background-color: transparent;
-                box-shadow: none;
-            }
-            .skiptranslate {
-                display: none;
-                height: 0;
-            }
-            .language__img {
-                cursor: pointer;
-            }
-
-            .language {
-                float:right;
-            }
-            b{
-                
-                color: white;
-                font-size: 30px;
-            }
-        </style>
     </head>
     <body>
         <div class="topnav">
-            <a class="active" href=""><img src="/img/carmodel.png" alt="" width="35" height="35"></a>
-            <a href="site/registration.html"></a>
-            <a href="site/images.html"></a>
-            <div class="language">
-                <b data-google-lang="en" class="leng">en</b>
-                <b data-google-lang="ru" class="leng">ru</b>
-                <b data-google-lang="uk" class="leng">ua</b>
+            <div class="head">
+                <a class="active" href=""><img src="/img/carmodel.png" alt="" width="35" height="35"></a>
             </div>
-          </div>
-          <div class="left"><img src="img/ad.jpg" style="width: 100%; margin: 20px 0;">
-           
-            <ul id="menu">
-                <li class="ui-state-disabled">
-                <li><a href="index.html">Главная</a></li>
-                <li><div>Регистрация</div>
-                  <ul>
-                    <li class="ui-state-disabled">
-                    <li><a href="site/registrationNew.php">Новый пользыватель</a></li>
-                    <li><a href="site/authNew.php">Войти</a></li>
-                  </ul>
-                </li>
-                <li><a href="site/images.html">Картинки</a></li>
-                  </ul>
-                </li>
-                <li class="ui-state-disabled"></li>
-              </ul>
+                <?php
+                    //Проверяем авторизован ли пользователь
+                    if(!isset($_SESSION['first_name']) && !isset($_SESSION['password'])){
+                        // если нет, то выводим блок с ссылками на страницу регистрации и авторизации
+                ?>
+                <div class="head">
+                    <a href="site/registrationNew.php">Регистрация</a>
+                </div>
+                
+                <div class="head">
+                    <a href="site/authNew.php">Авторизация</a>
+                </div>
+                <?php
+                    }else{
+                        //Если пользователь авторизован, то выводим ссылку Выход
+                ?> 
+                        <div class="head">
+                            <a href="site/logout.php">Выход</a>
+                        </div>
+                <?php
+                    }
+                ?>
+            <div class="head">
+                <a href="site/images.html">Картинки</a>
+            </div>
+            <!-- <a class="active" href=""><img src="/img/carmodel.png" alt="" width="35" height="35"></a>
+            <a href="site/registration.html"></a>
+            <a href="site/images.html"></a> -->
+        </div>
+        <div class="left">
+            <img src="img\ad.jpg" style="width: 100%; margin: 20px 0;">
+            <img src="img\ad.jpg" style="width: 100%; margin: 20px 0;">
+            <img src="img\ad.jpg" style="width: 100%; margin: 20px 0;">
         </div>
         <div class="right">
             <img src="img/ad.jpg" style="width: 100%; margin: 20px 0;">
             <img src="img/ad.jpg" style="width: 100%; margin: 20px 0;">
             <img src="img/ad.jpg" style="width: 100%; margin: 20px 0;">
         </div>
-        <div id="auth_block">
-            <?php
-                //Проверяем авторизован ли пользователь
-                if(!isset($_SESSION['first_name']) && !isset($_SESSION['password'])){
-                    // если нет, то выводим блок с ссылками на страницу регистрации и авторизации
-            ?>
-            <div id="link_register">
-                <a href="site/registrationNew.php">Регистрация</a>
-            </div>
-            
-            <div id="link_auth">
-                <a href="site/authNew.php">Авторизация</a>
-            </div>
-            <?php
-                }else{
-                    //Если пользователь авторизован, то выводим ссылку Выход
-            ?> 
-                    <div id="link_logout">
-                        <a href="site/logout.php">Выход</a>
-                    </div>
-            <?php
-                }
-            ?>
-        </div>
+    
         <div style="margin: 0px;width: 60%;display: flex;justify-content: center;">
             
             <div>
-                <table>
+                <table class="cars_table">
                     <caption style="font-weight: bolder;color: darkmagenta;" >Car shop by(Sh1monchik,Gr1nis,Shovch1k,Maks1mka)</caption> 
-                    <tr>    
-                        <th>Марка</th>
-                        <th>Модель</th>
-                        <th>Лошадиные силы</th>
-                        <th>Цена</th>
-                        <th>Продавец</th>
+                    <tr class="cars_tr">    
+                        <th class="cars_td">Марка</th>
+                        <th class="cars_td">Модель</th>
+                        <th class="cars_td">Лошадиные силы</th>
+                        <th class="cars_td">Цена</th>
+                        <th class="cars_td">Продавец</th>
                     </tr>
                 
                     <?php
@@ -136,18 +98,18 @@ session_start();
                     
                     foreach($cars as $car) {
                     ?>
-                    <tr>
-                        <td><?= $car[6]?></td>
-                        <td><?= $car[7]?></td>
-                        <td><?= $car[8]?></td>
-                        <td><?= $car[2]?></td>
-                        <td><?php if($car[4] == 3){?>
+                    <tr class="cars_tr">
+                        <td class="cars_td"><?= $car[6]?></td>
+                        <td class="cars_td"><?= $car[7]?></td>
+                        <td class="cars_td"><?= $car[8]?></td>
+                        <td class="cars_td"><?= $car[2]?></td>
+                        <td class="cars_td"><?php if($car[4] == 3){?>
                             Салон
                         <?php 
                             }
                         ?></td>
 
-                        <td><a href="deleteCar.php?id=<?= $car[0] ?>" style="text-decoration: none;color:darkred;">Delete</a></td>
+                        <td class="cars_td"><a href="deleteCar.php?id=<?= $car[0] ?>" style="text-decoration: none;color:darkred;">Удалить</a></td>
                     </tr>
                     <?php 
                     }
