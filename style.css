@@ -164,10 +164,6 @@ input[type="password"],
 textarea,
 select 
 {
-	-webkit-transition: all 0.30s ease-in-out;
-	-moz-transition: all 0.30s ease-in-out;
-	-ms-transition: all 0.30s ease-in-out;
-	-o-transition: all 0.30s ease-in-out;
 	outline: none;
 	box-sizing: border-box;
 	-webkit-box-sizing: border-box;
@@ -217,6 +213,3 @@ input[type="submit"]:hover,
 input[type="button"]:hover{
 	background: #2EBC99;    
 }
-.from{
-    
-} */
