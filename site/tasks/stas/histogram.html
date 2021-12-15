@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Гістограма</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+</head>
+<style>
+    #graph {
+        width: 100%;
+        height: 90vh;
+        border: 1px solid #aeaeae;
+        visibility: hidden;
+}
+    .bar {
+        width: 70px;
+        margin: 1px;
+        display: inline-block;
+        position: relative;
+        background-color: #aeaeae;
+        vertical-align: baseline;
+    }
+</style>
+<body>
+    <input type="text" class = "number">
+    <button onclick="addField()">Додати ще одне поле</button>
+    <div id="input0"></div>
+    <br><button onclick="createGraph()">Згенерувати гістограму</button><br>
+    <div id="graph"></div>
+
+    <script>
+        $(document).ready(function(){ 
+            $.ajax({
+                type: "GET", 
+                url: "data.xml",
+                dataType: "xml",
+                success: function(xml) { 
+                    $(xml).find('bar').each(function(){
+                        document.writeln($(this).attr("id"))
+                        $(this).find('name').each(function(){ 
+                            document.writeln($(this).text())})
+                        }) 
+                    } 
+            }) 
+        }) 
+
+
+
+
+        var x = 0;
+        function addField(){
+            let str = '<input type="text" class="number"><div id="input' + (x + 1) + '"></div>';
+            document.getElementById('input' + x).innerHTML = str;
+            x++;
+        }
+
+        function createGraph(){
+            var div = document.getElementById('graph');
+            div.style.visibility = 'visible';
+
+            let values = getValues();
+            for(let i = 0; i < values.length; i++){
+                let bar = document.createElement("div");
+                bar.className = "bar";
+                bar.style.height = `${values[i]}px`;
+                div.appendChild(bar);
+            }
+        }
+
+        function getValues(){
+            var vals = document.getElementsByClassName('number');
+            var values = new Array(vals.length);
+            for(let i = 0; i < values.length; i++){
+                values[i] = vals[i].value;
+            }
+            values.sort(function(a, b) {
+                return b - a;
+            });
+            console.log(values);
+            return values;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+<histogram>
+    <bar id="b1">100</bar>
+    <bar id="b2">200</bar>
+    <bar id="b3">300</bar>
+</histogram>
