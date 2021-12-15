@@ -52,28 +52,29 @@ body {
  height: 100vh;
 }
 
-.topnav {
-overflow: hidden;
-background-color: #333;
-height: 5%;
-}
 .bottom{
     clear: both;
     height: 5%;
     background-color: rgb(88, 88, 231);
     margin: 0;
 }
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+    height: 5%;
+}
+
 .topnav a {
-float: left;
-color: #f2f2f2;
-text-align: center;
-text-decoration: none;
-padding-left: 16px;
-padding-right:16px;
-font-size: 17px;
-display: flex;
-height: 100%;
-align-items: center;
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    text-decoration: none;
+    padding-left: 16px;
+    padding-right:16px;
+    font-size: 17px;
+    display: flex;
+    height: 100%;
+    align-items: center;
 }
 .topnav a:hover {
     background-color: #ddd;
@@ -82,7 +83,7 @@ align-items: center;
 
 .topnav a.active {
     background-color: #4CAF50;
-color: white;
+    color: white;
 }
 table {
 font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;

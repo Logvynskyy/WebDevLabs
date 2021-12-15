@@ -56,16 +56,16 @@ session_start();
         </style>
     </head>
     <body>
-        <div class="topnav">
-            <a class="active" href=""><img src="/img/carmodel.png" alt="" width="35" height="35"></a>
-            <a href="site/registration.html"></a>
-            <a href="site/images.html"></a>
+    <div class="topnav">
+            <a class="active" href="">Главная</a>
+            <a href="site/registration.html">Регистрация</a>
+            <a href="site/images.html">Картинки</a>
             <div class="language">
                 <b data-google-lang="en" class="leng">en</b>
                 <b data-google-lang="ru" class="leng">ru</b>
                 <b data-google-lang="uk" class="leng">ua</b>
             </div>
-          </div>
+    </div>
           <div class="left"><img src="img/ad.jpg" style="width: 100%; margin: 20px 0;">
            
             <ul id="menu">
