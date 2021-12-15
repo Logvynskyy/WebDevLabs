@@ -1,6 +1,6 @@
 <?php
 
-require_once 'connection.php';
+require_once 'php/connection.php';
 session_start();
 ?>
 <!DOCTYPE html>
@@ -41,38 +41,35 @@ session_start();
                         // если нет, то выводим блок с ссылками на страницу регистрации и авторизации
                 ?>
                 <div class="head">
-                    <a href="site/registrationNew.php">Регистрация</a>
+                    <a href="pages/registrationNew.php">Регистрация</a>
                 </div>
                 
                 <div class="head">
-                    <a href="site/authNew.php">Авторизация</a>
+                    <a href="pages/authorizationNew.php">Авторизация</a>
                 </div>
                 <?php
                     }else{
                         //Если пользователь авторизован, то выводим ссылку Выход
                 ?> 
                         <div class="head">
-                            <a href="site/logout.php">Выход</a>
+                            <a href="php/logout.php">Выход</a>
                         </div>
                 <?php
                     }
                 ?>
             <div class="head">
-                <a href="site/images.html">Картинки</a>
+                <a href="pages/images.php">Картинки</a>
             </div>
-            <!-- <a class="active" href=""><img src="/img/carmodel.png" alt="" width="35" height="35"></a>
-            <a href="site/registration.html"></a>
-            <a href="site/images.html"></a> -->
         </div>
         <div class="left">
-            <img src="img\ad.jpg" style="width: 100%; margin: 20px 0;">
-            <img src="img\ad.jpg" style="width: 100%; margin: 20px 0;">
-            <img src="img\ad.jpg" style="width: 100%; margin: 20px 0;">
+            <img src="/img/ad.jpg" style="width: 100%; margin: 20px 0;">
+            <img src="/img/ad.jpg" style="width: 100%; margin: 20px 0;">
+            <img src="/img/ad.jpg" style="width: 100%; margin: 20px 0;">
         </div>
         <div class="right">
-            <img src="img/ad.jpg" style="width: 100%; margin: 20px 0;">
-            <img src="img/ad.jpg" style="width: 100%; margin: 20px 0;">
-            <img src="img/ad.jpg" style="width: 100%; margin: 20px 0;">
+            <img src="/img/ad.jpg" style="width: 100%; margin: 20px 0;">
+            <img src="/img/ad.jpg" style="width: 100%; margin: 20px 0;">
+            <img src="/img/ad.jpg" style="width: 100%; margin: 20px 0;">
         </div>
     
         <div style="margin: 0px;width: 60%;display: flex;justify-content: center;">
@@ -109,7 +106,7 @@ session_start();
                             }
                         ?></td>
 
-                        <td class="cars_td"><a href="deleteCar.php?id=<?= $car[0] ?>" style="text-decoration: none;color:darkred;">Удалить</a></td>
+                        <td class="cars_td"><a href="php scripts\deleteCar.php?id=<?= $car[0] ?>" style="text-decoration: none;color:darkred;">Удалить</a></td>
                     </tr>
                     <?php 
                     }
