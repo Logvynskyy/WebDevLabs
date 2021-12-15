@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Гістограма</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
 </head>
 <style>
     #graph {
@@ -29,56 +29,74 @@
     <div id="graph"></div>
 
     <script>
-        $(document).ready(function(){ 
-            $.ajax({
-                type: "GET", 
-                url: "data.xml",
-                dataType: "xml",
-                success: function(xml) { 
-                    $(xml).find('bar').each(function(){
-                        document.writeln($(this).attr("id"))
-                        $(this).find('name').each(function(){ 
-                            document.writeln($(this).text())})
-                        }) 
-                    } 
-            }) 
-        }) 
+        // var x = 0;
+        // function addField(){
+        //     let str = '<input type="text" class="number"><div id="input' + (x + 1) + '"></div>';
+        //     document.getElementById('input' + x).innerHTML = str;
+        //     x++;
+        // }
+
+        // function createGraph(){
+        //     var div = document.getElementById('graph');
+        //     div.style.visibility = 'visible';
+
+        //     let values = getValues();
+        //     for(let i = 0; i < values.length; i++){
+        //         let bar = document.createElement("div");
+        //         bar.className = "bar";
+        //         bar.style.height = `${values[i]}px`;
+        //         div.appendChild(bar);
+        //     }
+        // }
+
+        // function getValues(){
+            
+            // var i = 0;
+
+            // $.ajax({
+            //     type: "GET", 
+            //     url: "data.xml",
+            //     dataType: "xml",
+            //     success: function(xml) { 
+            //         var xmlP = $.parseXML(xml);
+            //         console.log(xmlP);
 
 
+            //         // $(xml).find("histogram").each(function(){
+            //         //     $(this).find("bar").each(function(){
+            //         //         $(this).find("height").each(function(){
+            //         //             var height = $(this).text();
+            //         //             console.log(height);
+            //         //         })
+            //         //     })
+            //         // })
+
+            //     } 
+            // })
+
+            var xmlStr = '<?xml version="1.0" encoding="ISO-8859-1"?><histogram><bar><height>100</height></bar><bar><height>200</height></bar><bar><height>300</height></bar></histogram>';
+
+            var parser = new DOMParser();
+                    
+                    xmlDoc = parser.parseFromString(xmlStr, "text/xml");
+                    for(let i = 0; i < xmlDoc.getElementsByTagName("bar").length; i++)
+                        console.log(xmlDoc.getElementsByTagName("height")[i].innerHTML);
+                        
 
 
-        var x = 0;
-        function addField(){
-            let str = '<input type="text" class="number"><div id="input' + (x + 1) + '"></div>';
-            document.getElementById('input' + x).innerHTML = str;
-            x++;
-        }
+        //     var vals = document.getElementsByClassName('number');
+        //     var values = new Array(vals.length);
 
-        function createGraph(){
-            var div = document.getElementById('graph');
-            div.style.visibility = 'visible';
+        //     for(let i = 0; i < values.length; i++){
+        //         values[i] = vals[i].value;
+        //     }
+        //     values.sort(function(a, b) {
+        //         return b - a;
+        //     });
+        //     console.log(values);
 
-            let values = getValues();
-            for(let i = 0; i < values.length; i++){
-                let bar = document.createElement("div");
-                bar.className = "bar";
-                bar.style.height = `${values[i]}px`;
-                div.appendChild(bar);
-            }
-        }
-
-        function getValues(){
-            var vals = document.getElementsByClassName('number');
-            var values = new Array(vals.length);
-            for(let i = 0; i < values.length; i++){
-                values[i] = vals[i].value;
-            }
-            values.sort(function(a, b) {
-                return b - a;
-            });
-            console.log(values);
-            return values;
-        }
+        //     return values;
+        // }
     </script>
 </body>
 </html>
