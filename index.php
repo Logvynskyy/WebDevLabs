@@ -50,8 +50,15 @@ session_start();
                 
                 <?php
                     }else{
+                        if($_SESSION['first_name'] == "Stas"){
                         //Если пользователь авторизован, то выводим ссылку Выход
                 ?> 
+                        <div class="head">
+                            <a href="php/diary.php">Заметки</a>
+                        </div>
+                <?php
+                        }
+                ?>
                         <div class="head">
                             <a href="php/logout.php">Выход</a>
                         </div>
