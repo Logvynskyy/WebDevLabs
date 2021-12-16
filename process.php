@@ -19,9 +19,19 @@ if (!empty($errors)) {
     $data['success'] = false;
     $data['errors'] = $errors;
 } else {
-    $data['success'] = true;
-    $data['message'] = 'Success!';
+    $data['description'] = $_POST['description'];
+    $data['theme'] = $_POST['theme'];
+    $data['datepicker'] = $_POST['datepicker'];
+
+    $file = file_get_contents('data1.json');
+    $list = json_decode($file,TRUE); 
+    unset($file);
+
+    $list[] = [$data];
+    $jsonArr = json_encode($list);
+    file_put_contents('data1.json', $jsonArr);
 }
 
-echo json_encode($data);
+echo ($jsonArr);
+
 ?>
