@@ -2,25 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Гістограма</title>
+    <title>Персоналізатор</title>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 </head>
-<style>
-    #graph {
-        width: 100%;
-        height: 90vh;
-        border: 1px solid #aeaeae;
-        visibility: hidden;
-}
-    .bar {
-        width: 70px;
-        margin: 1px;
-        display: inline-block;
-        position: relative;
-        background-color: #aeaeae;
-        vertical-align: baseline;
-    }
-</style>
 <body>
     <h1>Example h1</h1>
     <h3>Example h3</h3>    
@@ -46,7 +30,6 @@
                     success: function(data1) { 
 
                         console.log(data);
-                        // console.log(data[1]);
 
                         document.body.style.background = data;
 
@@ -66,7 +49,6 @@
                     success: function(data2) { 
 
                         console.log(data);
-                        // console.log(data[1]);
 
                         document.body.style.fontFamily = data;
 

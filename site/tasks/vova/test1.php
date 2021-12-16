@@ -10,3 +10,4 @@
     file_put_contents('data1.json', json_encode($color));
 
     echo json_encode($color);
+?>
