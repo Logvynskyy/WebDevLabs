@@ -13,7 +13,7 @@
 <body style="width: 100%;height: 100vh;margin: 0;">
     <div class="topnav">
         <div class="head">
-            <a href=""><img src="/img/carmodel.png" alt="" width="35" height="35"></a>
+            <a href="../index.php"><img src="/img/carmodel.png" alt="" width="35" height="35"></a>
         </div>
             <?php
                 //Проверяем авторизован ли пользователь
