@@ -47,6 +47,7 @@ session_start();
                 <div class="head">
                     <a href="pages/authorizationNew.php">Авторизация</a>
                 </div>
+                
                 <?php
                     }else{
                         //Если пользователь авторизован, то выводим ссылку Выход
@@ -57,6 +58,11 @@ session_start();
                 <?php
                     }
                 ?>
+                <input type="text" name="color" id="color">
+                <button onClick="changeColor()">Send</button>
+
+                <input type="text" name="font" id="font">
+                <button onClick="changeFont()">Send</button>
             <div class="head">
                 <a href="pages/images.php">Картинки</a>
             </div>
@@ -121,6 +127,47 @@ session_start();
             <a class="instagram" href="https://instagram.com" target="_blank">Instagram</a>
             <a class="pinterest" href="https://pinterest.com" target="_blank">Pinterest</a>
         </div>
+        <script>
+            function changeColor(){
+
+                let data = document.getElementById('color').value;
+
+                $.ajax({
+                    url: 'php/test1.php',
+                    type: 'POST',
+                    crossDomain: true,
+                    dataType: 'json',
+                    data: data,
+                    success: function(data1) { 
+
+                        console.log(data);
+
+                        document.body.style.background = data;
+
+                    }
+                });
+            };        
+            function changeFont(){
+
+                let data = document.getElementById('font').value;
+
+                $.ajax({
+                    url: 'php/test2.php',
+                    type: 'POST',
+                    crossDomain: true,
+                    dataType: 'json',
+                    data: data,
+                    success: function(data2) { 
+
+                        console.log(data);
+
+                        document.body.style.fontFamily = data;
+
+                    }
+                });
+            };
+        
+    </script>
     </body>
     
 </html>
