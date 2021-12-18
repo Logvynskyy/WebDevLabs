@@ -51,7 +51,6 @@ session_start();
                 <?php
                     }else{
                         if($_SESSION['first_name'] == "Stas"){
-                        //Если пользователь авторизован, то выводим ссылку Выход
                 ?> 
                         <div class="head">
                             <a href="php/diary.php">Заметки</a>
@@ -75,14 +74,14 @@ session_start();
             </div>
         </div>
         <div class="left">
-            <img src="/img/ad.jpg" style="width: 100%; margin: 20px 0;">
-            <img src="/img/ad.jpg" style="width: 100%; margin: 20px 0;">
-            <img src="/img/ad.jpg" style="width: 100%; margin: 20px 0;">
+            <img src="img/ad.jpg" style="width: 100%; margin: 20px 0;">
+            <img src="img/ad.jpg" style="width: 100%; margin: 20px 0;">
+            <img src="img/ad.jpg" style="width: 100%; margin: 20px 0;">
         </div>
         <div class="right">
-            <img src="/img/ad.jpg" style="width: 100%; margin: 20px 0;">
-            <img src="/img/ad.jpg" style="width: 100%; margin: 20px 0;">
-            <img src="/img/ad.jpg" style="width: 100%; margin: 20px 0;">
+            <img src="img/ad.jpg" style="width: 100%; margin: 20px 0;">
+            <img src="img/ad.jpg" style="width: 100%; margin: 20px 0;">
+            <img src="img/ad.jpg" style="width: 100%; margin: 20px 0;">
         </div>
     
         <div style="margin: 0px;width: 60%;display: flex;justify-content: center;">
@@ -99,17 +98,13 @@ session_start();
                     </tr>
                 
                     <?php
-                    // $connection = new mysqli("localhost","root","","carshop");
-                    // $query = "SELECT * into outfile ‘D:\OpenServer\domains\WebDevLabs\text.csv’ lines terminated by ‘
-                    // ‘ from cars ";
-                    // $result = $connection->query($query);
                     $cars = mysqli_query($connect, "SELECT * FROM `cars`,`models` WHERE cars.Name = models.ID");
                     $cars = mysqli_fetch_all($cars);
                     
                     foreach($cars as $car) {
                     ?>
                     <tr class="cars_tr">
-                        <td class="cars_td"><?= $car[6]?></td>
+                        <td class="cars_td"><a href="php\template.php?id=<?= $car[0] ?>"><?= $car[6]?></a></td>
                         <td class="cars_td"><?= $car[7]?></td>
                         <td class="cars_td"><?= $car[8]?></td>
                         <td class="cars_td"><?= $car[2]?></td>
@@ -118,8 +113,13 @@ session_start();
                         <?php 
                             }
                         ?></td>
-
+                        <?php
+                            if($_SESSION['first_name'] == "Stas"){
+                        ?> 
                         <td class="cars_td"><a href="php scripts\deleteCar.php?id=<?= $car[0] ?>" style="text-decoration: none;color:darkred;">Удалить</a></td>
+                        <?php
+                            }
+                        ?>
                     </tr>
                     <?php 
                     }
