@@ -125,6 +125,20 @@ session_start();
                     }
                     ?>
                 </table>
+                <form action="create.php" method="post">
+                    <p>Name</p>
+                    <input type="text" name="name">
+                    <p>Price</p>
+                    <input type="number" name="price">
+                    <p>iSNew</p>
+                    <input type="number" name="isNew">
+                    <p>Horse Power</p>  
+                    <input type="number"  name="power">
+                    <p>Model</p>
+                    <input type="text" name="model">
+
+                <button style="margin-top:1%;" type="submit">Add new car</button>
+                </form>
             </div>
         </div>
         <div class="bottom">
