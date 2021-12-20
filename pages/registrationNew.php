@@ -19,9 +19,6 @@
         <div class="head">
             <a class="active">Регистрация</a>
         </div>
-        <div class="head">
-            <a href="images.php">Картинки</a>  
-        </div>
     </div>
     <div class="left">
         <img src="/img/ad.jpg" style="width: 100%; margin: 20px 0;">
