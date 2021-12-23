@@ -15,16 +15,16 @@ session_start();
         <script>
         $( function() {
             $( "#menu" ).menu();
-            $(".facebook").text("")
+            $("#facebook").text("")
                 .append("<img src=https://www.facebook.com/images/fb_icon_325x325.png width=20 height=20 />")
                 .button()
-            $(".twitter").text("")
+            $("#twitter").text("")
                 .append("<img src=https://play-lh.googleusercontent.com/yQ0oBTVi7VttofA73DSrcf9zrBsnktxxxn6ZaAoSVV8GNFlJKh2Z-A0CT5XgOKWwE_fs width=20 height=20 />")
                 .button()
-            $(".instagram").text("")
+            $("#instagram").text("")
                 .append("<img src=https://store-images.s-microsoft.com/image/apps.31997.13510798887167234.6cd52261-a276-49cf-9b6b-9ef8491fb799.30e70ce4-33c5-43d6-9af1-491fe4679377?mode=scale&q=90&h=300&w=300 width=20 height=20 />")
                 .button()
-            $(".pinterest").text("")
+            $("#pinterest").text("")
                 .append("<img src=https://3dnews.ru/assets/external/illustrations/2020/09/23/1021339/32432432.jpg width=20 height=20 />")
                 .button()
             } );
@@ -64,14 +64,13 @@ session_start();
                 <?php
                     }
                 ?>
-                <input type="text" name="color" id="color">
-                <button onClick="changeColor()">Send</button>
-
-                <input type="text" name="font" id="font">
-                <button onClick="changeFont()">Send</button>
-            <div class="head">
-                <a href="pages/images.php">Картинки</a>
-            </div>
+                <div style="float: right; padding: 6px">
+                    <input type="text" name="color" id="color">
+                    <button onClick="js/changeColor.js">Send</button>
+                
+                    <input type="text" name="font" id="font">
+                    <button onClick="js/changeFont.js">Send</button>
+                </div>
         </div>
         <div class="left">
             <img src="img/ad.jpg" style="width: 100%; margin: 20px 0;">
@@ -125,16 +124,33 @@ session_start();
                     }
                     ?>
                 </table>
+                <form action="create.php" method="post">
+                    <p>Name</p>
+                    <input type="text" name="name">
+                    <p>Price</p>
+                    <input type="number" name="price">
+                    <p>iSNew</p>
+                    <input type="number" name="isNew">
+                    <p>Horse Power</p>  
+                    <input type="number"  name="power">
+                    <p>Model</p>
+                    <input type="text" name="model">
+
+                <button style="margin-top:1%;" type="submit">Add new car</button>
+                </form>
             </div>
         </div>
         <div class="bottom">
             <span class = "text-center">Made by Gr1nis, Sh1monchik, <a class="laydak" href="JavaScript:alert('Maks1mka laydak');">Maks1mka</a> and Shovch1k</span>
-            <a class="facebook" href="https://facebook.com" target="_blank">Facebook</a>
-            <a class="twitter" href="https://twitter.com" target="_blank">Twitter</a>
-            <a class="instagram" href="https://instagram.com" target="_blank">Instagram</a>
-            <a class="pinterest" href="https://pinterest.com" target="_blank">Pinterest</a>
+            <div style="float: right">
+                <a class="cm" id="facebook" href="https://facebook.com" target="_blank">Facebook</a>
+                <a class="cm" id="twitter" href="https://twitter.com" target="_blank">Twitter</a>
+                <a class="cm" id="instagram" href="https://instagram.com" target="_blank">Instagram</a>
+                <a class="cm" id="pinterest" href="https://pinterest.com" target="_blank">Pinterest</a>
+            </div>
         </div>
         <script>
+            
             function changeColor(){
 
                 let data = document.getElementById('color').value;
@@ -153,7 +169,8 @@ session_start();
 
                     }
                 });
-            };        
+            };   
+
             function changeFont(){
 
                 let data = document.getElementById('font').value;

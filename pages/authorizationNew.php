@@ -46,9 +46,6 @@
         <div class="head">
             <a class="active">Авторизация</a>
         </div>
-        <div class="head">
-            <a href="images.php">Картинки</a>  
-        </div>
     </div>
     
     <div class="left">
