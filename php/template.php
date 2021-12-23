@@ -66,10 +66,10 @@ $id = $_GET['id'];
                     }
                 ?>
                 <div style="float: right; padding: 6px">
-                    <input type="text" name="color" id="color">
+                    <input type="text" name="color" id="color" class="form-change">
                     <button onClick="changeColor()">Send</button>
                 
-                    <input type="text" name="font" id="font">
+                    <input type="text" name="font" id="font"class="form-change">
                     <button onClick="changeFont()">Send</button>
                 </div>
         </div>

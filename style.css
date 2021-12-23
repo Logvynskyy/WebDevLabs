@@ -143,7 +143,7 @@ li a{
 .ul-menu { width: 100%; }
 
 h1{
-    width: 80%;
+    width: 40%;
 	background: #43D1AF;
 	padding: 20px 0;
 	font-size: 140%;
@@ -183,7 +183,7 @@ img{
     margin-left: 25px;
 }
 
-input[type="text"],
+/* input[type="text"],
 input[type="date"],
 input[type="datetime"],
 input[type="email"],
@@ -244,3 +244,8 @@ input[type="submit"]:hover,
 input[type="button"]:hover{
 	background: #2EBC99;    
 }
+
+.form-change{
+    text-align: left;
+    width: 20px;
+} */

@@ -35,7 +35,7 @@
     <div id="form_register" class="form">
             <h1>Форма регистрации</h1>
  
-            <form action="../php/register.php" method="post" name="form_register" class="fr">
+            <form action="../php/register.php" method="post" name="form_register"|>
                 <table>
                     <tbody><tr>
                         <td> Логін: </td>

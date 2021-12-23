@@ -136,6 +136,7 @@ session_start();
                         <p class="text-form">Horse Power</p>  
                         <input type="number"  name="power">
                         <p class="text-form">Model</p>
+                        <br>
                         <input type="text" name="model">
 
                         <input type="submit" value="Add new car" style="margin-bo   ttom: 15px;">
