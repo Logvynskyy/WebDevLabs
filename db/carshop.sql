@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Дек 09 2021 г., 12:31
+-- Время создания: Дек 19 2021 г., 21:28
 -- Версия сервера: 8.0.24
 -- Версия PHP: 7.1.33
 
@@ -49,7 +49,6 @@ INSERT INTO `cars` (`ID`, `Name`, `Price`, `isNew`, `Owner`) VALUES
 (7, 7, 25000, 0x31, 3),
 (8, 8, 13000, 0x31, 3),
 (9, 6, 40000, 0x30, 3),
-(10, 5, 72000, 0x31, 3),
 (11, 4, 76000, 0x30, 3),
 (12, 10, 78000, 0x30, 3),
 (13, 15, 75000, 0x30, 3),
@@ -60,6 +59,44 @@ INSERT INTO `cars` (`ID`, `Name`, `Price`, `isNew`, `Owner`) VALUES
 (18, 4, 36900, 0x31, 3),
 (19, 1, 52000, 0x30, 3),
 (20, 2, 41000, 0x30, 3);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `car_info`
+--
+
+CREATE TABLE `car_info` (
+  `ID` int NOT NULL,
+  `Info` text NOT NULL,
+  `img` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Дамп данных таблицы `car_info`
+--
+
+INSERT INTO `car_info` (`ID`, `Info`, `img`) VALUES
+(1, 'Максимальная скорость, км/ч: 250 Объем двигателя: 2,925 Разгон 1–100 км/ч, с.: 6,2 Салон: Кожа наппа \"Эксклюзив\" алая/черная Тип топлива: Дизель Цвет: Черный', 'https://avtomarket.ru/stuff/gallery/11433/250x-/b_170159.jpg');
+(2, 'Cреднеразмерный кроссовер компании Volkswagen, производится с 2002 года. В настоящее время автомобиль выпускают на заводе Volkswagen в Братиславе (и ранее в Калуге). Touareg стал третьим внедорожником в истории марки после Volkswagen Тур 82 (Kübelwagen) и Volkswagen Iltis.', 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/VW_Touareg_3.0_TDI_V6_SCR_4Motion_Facelift.JPG/1024px-VW_Touareg_3.0_TDI_V6_SCR_4Motion_Facelift.JPG');
+(3, 'Люксовый компактный кроссовер немецкой компании BMW. X3 первого поколения разработан и выпускался совместно с компанией Magna Steyr на заводе в Граце, Австрия. Второе поколение кроссовера было представлено в июле 2010 года, производство автомобиля началось 1 сентября 2010 года. По состоянию на июль 2010 года во всём мире было продано порядка 600 000 экземпляров BMW X3.', 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/2018_BMW_X3_xDrive30d_M_Sport_Automatic_3.0_Front.jpg/305px-2018_BMW_X3_xDrive30d_M_Sport_Automatic_3.0_Front.jpg');
+(4, 'Это полноразмерный роскошный внедорожник , построенный подразделением роскошных автомобилей Nissan Infiniti . QX80 имеет общую платформу с полноразмерным внедорожником серии Y62 Nissan Patrol , также известным в Северной Америке как Nissan Armada .Википедия  site:etnowiki.ru', 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/2018_Infiniti_QX80_front_4.2.18.jpg/280px-2018_Infiniti_QX80_front_4.2.18.jpg');
+(5, 'На Детройтском автосалоне 2013 года Ford показал прообраз пикапа F-150 следующего поколения — концепт Atlas. Кроме изменённой внешности новое семейство грузовиков Ford получит экономичные моторы семейства EcoBoost, элементы активной аэродинамики и функциональные приспособления.', 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Ford_F-150_Bauval.png/305px-Ford_F-150_Bauval.png');
+(6, 'Двухместный заднеприводный спортивный автомобиль, выпускаемый под маркой Chevrolet компанией General Motors в США с 1953 года. Автомобиль является первым американским спортивным автомобилем, созданным американским производителем.', 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Chevrolet_Corvette_C8_Stingray_blue.jpg/305px-Chevrolet_Corvette_C8_Stingray_blue.jpg');
+(7, '11 ноября 2019 года в Праге состоялась презентация Škoda Octavia четвёртого поколения. В конце ноября 2019-го на заводе в чешском Млада-Болеславе началось серийное производство. Новинка по-прежнему использует модульную платформу MQB концерна Volkswagen AG, с сохранением длины колёсной базы.', 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Skoda_Octavia_IV_liftback.jpg/305px-Skoda_Octavia_IV_liftback.jpg');
+(8, 'Пятиместный среднеразмерный спортивный кроссовер производства немецкой автомобилестроительной компании Porsche. Автомобиль создан при активном участии концерна Volkswagen.', 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Porsche_Cayenne_S_%2892A%29_%E2%80%93_Frontansicht%2C_10._Oktober_2011%2C_W%C3%BClfrath.jpg/305px-Porsche_Cayenne_S_%2892A%29_%E2%80%93_Frontansicht%2C_10._Oktober_2011%2C_W%C3%BClfrath.jpg');
+(9, 'Это полноразмерный роскошный внедорожник , построенный подразделением роскошных автомобилей Nissan Infiniti . QX80 имеет общую платформу с полноразмерным внедорожником серии Y62 Nissan Patrol , также известным в Северной Америке как Nissan Armada .Википедия  site:etnowiki.ru', 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/2018_Infiniti_QX80_front_4.2.18.jpg/280px-2018_Infiniti_QX80_front_4.2.18.jpg');
+(10, 'Это компактный кроссовер сегмента «люкс», производства британской автомобильной компании Jaguar Land Rover. Четвертая модель в линейке Range Rover', 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/2017_Land_Rover_Range_Rover_Velar_First_Edition_D3_3.0_Front.jpg/305px-2017_Land_Rover_Range_Rover_Velar_First_Edition_D3_3.0_Front.jpg');
+(11, 'Компактный престижный кроссовер, выпускающийся британской компанией Jaguar Cars с 2016 года, первый кроссовер компании. Впервые был представлен на Североамериканском международном автосалоне в Детройте в январе 2015 года, затем также на Франкфуртском автосалоне в сентябре того же года.', 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Jaguar_F-Pace_%28front_3-4%29.JPG/305px-Jaguar_F-Pace_%28front_3-4%29.JPG');
+(12, 'Автомобиль бизнес-класса с кузовом типа седан, выпускаемый японским автопроизводителем Lexus с 1989 года. Автомобиль собирается на заводе в Японии, расположенном на острове Кюсю. Автомобиль имеет общую платформу с моделью Toyota Avalon.', 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Lexus_ES_Hybrid_Filderstadt_1Y7A4892.jpg/305px-Lexus_ES_Hybrid_Filderstadt_1Y7A4892.jpg');
+(13, 'Автомобиль бизнес-класса с кузовом типа седан, выпускаемый японским автопроизводителем Lexus с 1989 года. Автомобиль собирается на заводе в Японии, расположенном на острове Кюсю. Автомобиль имеет общую платформу с моделью Toyota Avalon.', 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Lexus_ES_Hybrid_Filderstadt_1Y7A4892.jpg/305px-Lexus_ES_Hybrid_Filderstadt_1Y7A4892.jpg');
+(14, 'Кроссовер от компании Maserati, который был официально представлен в 2011 году на автосалоне во Франкфурте как концепт-кар под названием Maserati Kubang, позже серийная модель, дебютировавшая на автосалоне в Женеве в марте 2016 года, получила название Levante.', 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/20170416_081_chokier.jpg/305px-20170416_081_chokier.jpg');
+(15, 'Люксовый компактный кроссовер немецкой компании BMW. X3 первого поколения разработан и выпускался совместно с компанией Magna Steyr на заводе в Граце, Австрия. Второе поколение кроссовера было представлено в июле 2010 года, производство автомобиля началось 1 сентября 2010 года. По состоянию на июль 2010 года во всём мире было продано порядка 600 000 экземпляров BMW X3.', 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/2018_BMW_X3_xDrive30d_M_Sport_Automatic_3.0_Front.jpg/305px-2018_BMW_X3_xDrive30d_M_Sport_Automatic_3.0_Front.jpg');
+(16, 'Это полноразмерный роскошный внедорожник , построенный подразделением роскошных автомобилей Nissan Infiniti . QX80 имеет общую платформу с полноразмерным внедорожником серии Y62 Nissan Patrol , также известным в Северной Америке как Nissan Armada .Википедия  site:etnowiki.ru', 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/2018_Infiniti_QX80_front_4.2.18.jpg/280px-2018_Infiniti_QX80_front_4.2.18.jpg');
+(17, 'Флагманская серия представительских автомобилей немецкой компании Mercedes-Benz, дочернего подразделения концерна Daimler AG. Представляет собой наиболее значимую линейку моделей в иерархии классов торговой марки.', 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Mercedes-Benz_S_500_%28W222%29_front_view.jpg/1024px-Mercedes-Benz_S_500_%28W222%29_front_view.jpg');
+(18, 'Cреднеразмерный кроссовер компании Volkswagen, производится с 2002 года. В настоящее время автомобиль выпускают на заводе Volkswagen в Братиславе (и ранее в Калуге). Touareg стал третьим внедорожником в истории марки после Volkswagen Тур 82 (Kübelwagen) и Volkswagen Iltis.', 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/VW_Touareg_3.0_TDI_V6_SCR_4Motion_Facelift.JPG/1024px-VW_Touareg_3.0_TDI_V6_SCR_4Motion_Facelift.JPG');
+
+
 
 -- --------------------------------------------------------
 
@@ -120,7 +157,8 @@ INSERT INTO `models` (`ID`, `Manufacturer`, `Model`, `Horse Power`) VALUES
 (39, 'Hyundai', 'Accent', 120),
 (40, 'Subaru', 'Outback', 188),
 (41, 'Mitsubishi', 'Lancer', 190),
-(42, 'Nissan', 'Leaf', 170);
+(42, 'Nissan', 'Leaf', 170),
+(43, 'Alpine', 'CB2', 250);
 
 -- --------------------------------------------------------
 
@@ -157,7 +195,9 @@ INSERT INTO `users` (`ID`, `Name`, `Password`, `isAdmin`, `Date of registration`
 (1, 'Stas', '1a28a8462585778b4656ae03a2c18b2d', 0x30, '2021-12-08 14:58:44'),
 (2, 'Dima', '1a28a8462585778b4656ae03a2c18b2d', 0x30, '2021-12-08 15:01:39'),
 (3, 'Салон', '123', 0x31, '2021-12-08 22:20:36'),
-(4, 'Denis', '08328fb45f8471397ca6142961fa4c13', 0x30, '2021-12-08 22:35:24');
+(4, 'Denis', '08328fb45f8471397ca6142961fa4c13', 0x30, '2021-12-08 22:35:24'),
+(5, 'test', 'e1c6fca3c86ec6518cf5be7be2d3b415', 0x30, '2021-12-16 13:19:59'),
+(6, 'qwer', '08328fb45f8471397ca6142961fa4c13', 0x30, '2021-12-16 19:55:11');
 
 --
 -- Индексы сохранённых таблиц
@@ -170,6 +210,12 @@ ALTER TABLE `cars`
   ADD PRIMARY KEY (`ID`),
   ADD KEY `Cars_fk0` (`Name`),
   ADD KEY `Cars_fk1` (`Owner`);
+
+--
+-- Индексы таблицы `car_info`
+--
+ALTER TABLE `car_info`
+  ADD PRIMARY KEY (`ID`);
 
 --
 -- Индексы таблицы `models`
@@ -202,10 +248,16 @@ ALTER TABLE `cars`
   MODIFY `ID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
+-- AUTO_INCREMENT для таблицы `car_info`
+--
+ALTER TABLE `car_info`
+  MODIFY `ID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT для таблицы `models`
 --
 ALTER TABLE `models`
-  MODIFY `ID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `ID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT для таблицы `orders`
@@ -217,7 +269,7 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `ID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц
