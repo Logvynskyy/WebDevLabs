@@ -66,10 +66,10 @@ session_start();
                 ?>
                 <div style="float: right; padding: 6px">
                     <input type="text" name="color" id="color">
-                    <button onClick="js/changeColor.js">Send</button>
+                    <button onClick="changeColor()">Send</button>
                 
                     <input type="text" name="font" id="font">
-                    <button onClick="js/changeFont.js">Send</button>
+                    <button onClick="changeFont()">Send</button>
                 </div>
         </div>
         <div class="left">
@@ -124,20 +124,23 @@ session_start();
                     }
                     ?>
                 </table>
-                <form action="create.php" method="post">
-                    <p>Name</p>
-                    <input type="text" name="name">
-                    <p>Price</p>
-                    <input type="number" name="price">
-                    <p>iSNew</p>
-                    <input type="number" name="isNew">
-                    <p>Horse Power</p>  
-                    <input type="number"  name="power">
-                    <p>Model</p>
-                    <input type="text" name="model">
+                <div style="width: 60%; margin-left: 30px;">
+                    <form action="create.php" method="post">
+                        <h1>Додавання машини</h1>
+                        <p class="text-form">Name</p>
+                        <input type="text" name="name">
+                        <p class="text-form">Price</p>
+                        <input type="number" name="price">
+                        <p class="text-form">iSNew</p>
+                        <input type="number" name="isNew">
+                        <p class="text-form">Horse Power</p>  
+                        <input type="number"  name="power">
+                        <p class="text-form">Model</p>
+                        <input type="text" name="model">
 
-                <button style="margin-top:1%;" type="submit">Add new car</button>
-                </form>
+                        <input type="submit" value="Add new car" style="margin-bo   ttom: 15px;">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="bottom">
